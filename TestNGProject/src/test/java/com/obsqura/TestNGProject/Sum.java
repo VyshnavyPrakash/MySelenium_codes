@@ -10,13 +10,13 @@ public class Sum extends Base {
 		int a = 20;
 		int b = 30;
 		int t = a+b;
-		String sa = Integer.toString(a);
-		String sb = Integer.toString(b);
+		String value1 = Integer.toString(a);
+		String value2 = Integer.toString(b);
 		String st = Integer.toString(t);
 		String expectedMessage = "Total A + B : "+t;
 		String actualMessage;
-	    driver.findElement(By.xpath("//input[@id='value-a']")).sendKeys(sa);
-		driver.findElement(By.xpath("//input[@id='value-b']")).sendKeys(sb);
+	    driver.findElement(By.xpath("//input[@id='value-a']")).sendKeys(value1);
+		driver.findElement(By.xpath("//input[@id='value-b']")).sendKeys(value2);
 		driver.findElement(By.xpath("//button[@id='button-two']")).click();
 		actualMessage = driver.findElement(By.xpath("//div[@id='message-two']")).getText();
 		Assert.assertEquals(actualMessage, expectedMessage);	

@@ -34,6 +34,18 @@ public class Locators extends Base {
 	public void xpathIndex() {
 		driver.findElement(By.xpath("(//div[@id ='nav-xshop'])[1]"));
 	} 
+	@Test
+	public void linkText() {
+		driver.findElement(By.linkText("Checkbox Demo")).click();
+	}
+	@Test
+	public void partialLinkText() {
+		driver.findElement(By.partialLinkText("Checkbox")).click();
+	}
+	@Test
+	public void xPathText() {
+		driver.findElement(By.xpath("//a[text()='Radio Buttons Demo']"));
+	}
 	}
 	
 

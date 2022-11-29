@@ -16,11 +16,11 @@ import org.testng.annotations.Test;
 	public void cssSelector() {
 	driver.findElement(By.cssSelector("input#twotabsearchtextbox"));	
 	 }
-	@Test
-	public void cssClass() {
-	driver.findElement(By.cssSelector(""));
+	
+	
 	 }
+   
 	
 	
 	   
-}
+

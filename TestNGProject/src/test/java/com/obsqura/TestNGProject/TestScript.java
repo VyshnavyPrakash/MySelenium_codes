@@ -29,13 +29,12 @@ public class TestScript extends Base {
         }
      @Test
      public void hardAssert() {
-    	 
         String expectedTitle = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
      	String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
         String expectedURL = "https://www.amazon.in/";
  	    String actualURL = driver.getCurrentUrl();
- 	   Assert.assertEquals(expectedURL,actualURL );
+ 	    Assert.assertEquals(expectedURL,actualURL );
         }
      
 }
