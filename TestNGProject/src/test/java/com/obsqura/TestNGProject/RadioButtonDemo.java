@@ -33,9 +33,7 @@ public class RadioButtonDemo extends Base {
 		WebElement maleButton = driver.findElement(By.id("inlineRadio1"));
 		WebElement showSelectButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		WebElement msg = driver.findElement(By.xpath("//div[@id='message-one']"));
-		if(maleButton.isEnabled()) {
-			maleButton.click();
-		}
+		maleButton.click();	
 		if(maleButton.isSelected()) {
 			showSelectButton.click();
 			actualMessage = msg.getText();
@@ -49,9 +47,7 @@ public class RadioButtonDemo extends Base {
 		WebElement femaleButton = driver.findElement(By.id("inlineRadio2"));
 		WebElement showSelectButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		WebElement msg = driver.findElement(By.xpath("//div[@id='message-one']"));
-		if(femaleButton.isEnabled()) {
-			femaleButton.click();	
-		}
+		femaleButton.click();	
 		if(femaleButton.isSelected()) {
 			showSelectButton.click();
 			actualMessage = msg.getText();

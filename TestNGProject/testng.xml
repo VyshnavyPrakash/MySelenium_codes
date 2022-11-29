@@ -14,18 +14,18 @@
      </methods> 
      </class>-->
     <!-- <class name="com.obsqura.TestNGProject.XPath"/>-->
-      <class name="com.obsqura.TestNGProject.BasicCommandsOB">
+     <!-- <class name="com.obsqura.TestNGProject.BasicCommandsOB">
      <methods>
-     <include name = "List"></include>
+     <include name = "getLocation"></include>
      </methods>
-     </class>
+     </class>-->
     <!-- <class name="com.obsqura.TestNGProject.Sum"/>-->
     
-    <!-- <class name="com.obsqura.TestNGProject.RadioButtonDemo">
+    <class name="com.obsqura.TestNGProject.RadioButtonDemo">
     <methods>
-    <include name ="femaleRadioButton"></include>
+    <include name ="maleRadioButton"></include>
     </methods>
-    </class>-->
+    </class>
     
     </classes>
   </test> <!-- Test -->
