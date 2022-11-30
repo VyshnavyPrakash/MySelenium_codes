@@ -21,9 +21,15 @@
      </class>-->
     <!-- <class name="com.obsqura.TestNGProject.Sum"/>-->
     
+   <!-- <class name="com.obsqura.TestNGProject.RadioButtonDemo">
+    <methods>
+    <include name ="guruRadioButton"></include>
+    </methods>
+    </class>-->
+    
     <class name="com.obsqura.TestNGProject.RadioButtonDemo">
     <methods>
-    <include name ="maleRadioButton"></include>
+    <include name="malePatientGenderAge"></include>
     </methods>
     </class>
     

@@ -5,9 +5,13 @@
     <classes>
       <class name="com.obsqura.TestNGProject.RadioButtonDemo">
         <methods>
+          <include name="guruRadioButton"/>
           <include name="BrowserClose"/>
           <include name="InitializeBrowser"/>
           <include name="radioButtonSample"/>
+          <include name="maleRadioButton"/>
+          <include name="malePatientGenderAge"/>
+          <include name="femalepatientGenderage"/>
         </methods>
       </class> <!-- com.obsqura.TestNGProject.RadioButtonDemo -->
     </classes>

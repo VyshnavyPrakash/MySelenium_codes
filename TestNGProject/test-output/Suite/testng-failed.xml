@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.obsqura.TestNGProject.RadioButtonDemo">
+      <class name="com.obsqura.TestNGProject.guruRadioButton">
         <methods>
-          <include name="BrowserClose"/>
-          <include name="InitializeBrowser"/>
-          <include name="maleRadioButton"/>
+          <include name="browserClose"/>
+          <include name="guruRadioButton"/>
+          <include name="initializeBrowser"/>
         </methods>
-      </class> <!-- com.obsqura.TestNGProject.RadioButtonDemo -->
+      </class> <!-- com.obsqura.TestNGProject.guruRadioButton -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
