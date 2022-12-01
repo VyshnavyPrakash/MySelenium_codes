@@ -1,36 +1,52 @@
 package com.obsqura.TestNGProject;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class guruRadioButton{
-	public WebDriver driver;
-	@BeforeMethod
-    public void InitializeBrowser(){
-	    System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\eclipse-workspace\\TestNGProject\\src\\main\\java\\Resources\\chromedriver.exe");
-	    driver = new ChromeDriver();
-	    driver.get("https://demo.guru99.com/test/ajax.html");
-        }
+public class guruRadioButton extends Base{
+	
     
 	@Test
-	public void guruRadioButton() {
+	public void radioButtonDislikeByDefault() {
 		boolean yesButton,noButton;
-		WebElement yes =driver.findElement(By.xpath("//input[@id='yes']"));
-		WebElement no = driver.findElement(By.xpath("(//input[@name='name'])[2]"));
-		Assert.assertFalse(yes.isSelected());
-		Assert.assertFalse(no.isSelected());
-		no.click();
-		no.isSelected();
+		String actualMsg, expectedMsg = "Radio button is Not checked";
+		WebElement yesRadioButton =driver.findElement(By.xpath("//input[@id='yes']"));
+		WebElement noRadioButton = driver.findElement(By.xpath("(//input[@name='name'])[2]"));
+		WebElement checkButton = driver.findElement(By.xpath("//input[@id='buttoncheck']"));
+		WebElement reset = driver.findElement(By.xpath("//input[@type='reset']"));
+		WebElement msg = driver.findElement(By.xpath("//p[@class='radiobutton']"));
+		yesButton = yesRadioButton.isSelected();
+		noButton = noRadioButton.isSelected();
+		if(yesButton==false&&noButton==false) {
+			checkButton.click();
+		}
+		else {
+			reset.click();
+			checkButton.click();
+			
+		}
+		actualMsg = msg.getText();
+		Assert.assertEquals(actualMsg, expectedMsg,"Radio button is checked and it's value is Yes");
 		
 	}
-	 @AfterMethod
-	    public void browserClose() {
-	      	driver.close();
-	        }
+	@Test
+	public void clickRadioButtonNo() {
+		String actualMsg, expectedMsg = "Radio button is checked and it's value is No";
+		WebElement noRadioButton = driver.findElement(By.xpath("(//input[@name='name'])[2]"));
+		WebElement checkButton = driver.findElement(By.xpath("//input[@id='buttoncheck']"));
+		WebElement msg = driver.findElement(By.xpath("//p[@class='radiobutton']"));
+		noRadioButton.click();
+		if(noRadioButton.isSelected()) {
+			checkButton.click();
+		}
+		actualMsg = msg.getText();
+		Assert.assertEquals(actualMsg, expectedMsg,"Both the values are not same");
+		
+	}
+	 
 }

@@ -20,7 +20,7 @@ public class RadioButtonDemo extends Base {
         if(isMaleButnSelected==false&&isFemaleButnSelected==false) {
         button.click();
         actualMessage = msg.getText();
-        Assert.assertEquals(actualMessage, expectedMessage,"Not displayed");
+        Assert.assertEquals(actualMessage, expectedMessage,"both messages are not equal");
             }   
 	   }
 	@Test
@@ -36,7 +36,7 @@ public class RadioButtonDemo extends Base {
 		if(maleButton.isSelected()) {
 		 showSelectButton.click();
 		 actualMessage = msg.getText();
-		 Assert.assertEquals(actualMessage, expectedMessage);
+		 Assert.assertEquals(actualMessage, expectedMessage,"both messages are not equal");
 		   }	
 	  }
 	@Test
@@ -52,7 +52,7 @@ public class RadioButtonDemo extends Base {
 		 if(femaleButton.isSelected()) {
 			showSelectButton.click();
 			actualMessage = msg.getText();
-			Assert.assertEquals(actualMessage, expectedMessage);	
+			Assert.assertEquals(actualMessage, expectedMessage,"both messages are not equal");	
 		}	
 	}
 	@Test
@@ -71,7 +71,7 @@ public class RadioButtonDemo extends Base {
 		if(gender&&age) {
 			getResult.click();
 			actualMsg = msg.getText();
-			Assert.assertEquals(actualMsg,expectedMsg);	
+			Assert.assertEquals(actualMsg,expectedMsg,"both messages are not equal");	
 	   }	
 	}
 	@Test
@@ -90,7 +90,7 @@ public class RadioButtonDemo extends Base {
 		if(gender&&age) {
 			getResult.click();
 			actualMsg = msg.getText();
-			Assert.assertEquals(actualMsg, expectedMsg);
+			Assert.assertEquals(actualMsg, expectedMsg,"both messages are not equal");
 		}
 	}
 	

@@ -27,9 +27,9 @@
     </methods>
     </class>-->
     
-    <class name="com.obsqura.TestNGProject.RadioButtonDemo">
+    <class name="com.obsqura.TestNGProject.CheckBoxDemo">
     <methods>
-    <include name="malePatientGenderAge"></include>
+    <include name="multipleCheckBoxSelect2"></include>
     </methods>
     </class>
     
