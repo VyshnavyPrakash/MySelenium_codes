@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.obsqura.TestNGProject.CheckBoxDemo">
+      <class name="com.obsqura.TestNGProject.selectClass">
         <methods>
           <include name="BrowserClose"/>
-          <include name="multipleCheckBoxSelect2"/>
           <include name="InitializeBrowser"/>
+          <include name="selectAllValuePrgm"/>
         </methods>
-      </class> <!-- com.obsqura.TestNGProject.CheckBoxDemo -->
+      </class> <!-- com.obsqura.TestNGProject.selectClass -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

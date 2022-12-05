@@ -27,9 +27,9 @@
     </methods>
     </class>-->
     
-    <class name="com.obsqura.TestNGProject.CheckBoxDemo">
+    <class name="com.obsqura.TestNGProject.selectClass">
     <methods>
-    <include name="multipleCheckBoxSelect2"></include>
+    <include name="isMultiple"></include>
     </methods>
     </class>
     

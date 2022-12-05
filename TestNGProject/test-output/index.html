@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.obsqura.TestNGProject.CheckBoxDemo" class="method navigator-link" hash-for-method="multipleCheckBoxSelect2">multipleCheckBoxSelect2</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.obsqura.TestNGProject.selectClass" class="method navigator-link" hash-for-method="isMultiple">isMultiple</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -122,14 +122,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.obsqura.TestNGProject.CheckBoxDemo</span>
+              <span class="class-name">com.obsqura.TestNGProject.selectClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="multipleCheckBoxSelect2">
-                  </a> <!-- multipleCheckBoxSelect2 -->
-                  <span class="method-name">multipleCheckBoxSelect2</span>
+                  <a name="isMultiple">
+                  </a> <!-- isMultiple -->
+                  <span class="method-name">isMultiple</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,11 +146,11 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.obsqura.TestNGProject.CheckBoxDemo&quot;&gt;
+      &lt;class name=&quot;com.obsqura.TestNGProject.selectClass&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;multipleCheckBoxSelect2&quot;/&gt;
+          &lt;include name=&quot;isMultiple&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.obsqura.TestNGProject.CheckBoxDemo --&gt;
+      &lt;/class&gt; &lt;!-- com.obsqura.TestNGProject.selectClass --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -192,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'multipleCheckBoxSelect2')
-data.setCell(0, 2, 'com.obsqura.TestNGProject.CheckBoxDemo')
-data.setCell(0, 3, 682);
+data.setCell(0, 1, 'isMultiple')
+data.setCell(0, 2, 'com.obsqura.TestNGProject.selectClass')
+data.setCell(0, 3, 742);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 682 ms</span>
+              <span class="suite-total-time">Total running time: 742 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -214,15 +214,25 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">7 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.obsqura.TestNGProject.CheckBoxDemo</span>
+              <span class="ignored-class-name">com.obsqura.TestNGProject.selectClass</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">multipleCheckBoxSelectAll</span>
+                <span class="ignored-method-name">diselectAllValuePrgm</span>
                 <br/>
-                <span class="ignored-method-name">singleCheckBox</span>
+                <span class="ignored-method-name">selectAllValue</span>
+                <br/>
+                <span class="ignored-method-name">selectByValue</span>
+                <br/>
+                <span class="ignored-method-name">getOption</span>
+                <br/>
+                <span class="ignored-method-name">selectByIndex</span>
+                <br/>
+                <span class="ignored-method-name">SingleValueSelect</span>
+                <br/>
+                <span class="ignored-method-name">visibleText</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -234,18 +244,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.obsqura.TestNGProject.CheckBoxDemo</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.obsqura.TestNGProject.selectClass</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">multipleCheckBoxSelect2</span>
-                <span class="method-start">3900 ms</span>
+                <span class="method-name">isMultiple</span>
+                <span class="method-start">3861 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">BrowserClose</span>
-                <span class="method-start">4584 ms</span>
+                <span class="method-start">4606 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
