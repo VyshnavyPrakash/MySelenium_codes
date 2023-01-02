@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
   <classes>
-    <class name="com.obsqura.testscripts.selectInputDemoTest">
+    <class name="com.obsqura.testscripts.JavaScriptExecuterDemoTest">
     <methods>
-    <include name="verifyTwoInputFieldColorAndGetMsg"></include>
+    <include name="javaScriptExecters"></include>
     </methods>
     </class>
   </classes>

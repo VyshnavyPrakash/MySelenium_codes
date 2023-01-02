@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-07T19:03:15 IST" name="Suite" finished-at="2022-12-07T19:03:20 IST" duration-ms="5487">
+  <suite started-at="2023-01-02T14:23:04 IST" name="Suite" finished-at="2023-01-02T14:23:10 IST" duration-ms="6184">
     <groups>
     </groups>
-    <test started-at="2022-12-07T19:03:15 IST" name="Test" finished-at="2022-12-07T19:03:20 IST" duration-ms="5487">
-      <class name="com.obsqura.testscripts.selectInputDemoTest">
-        <test-method is-config="true" signature="InitializeBrowser()[pri:0, instance:com.obsqura.testscripts.selectInputDemoTest@16610890]" started-at="2022-12-07T19:03:15 IST" name="InitializeBrowser" finished-at="2022-12-07T19:03:19 IST" duration-ms="4498" status="PASS">
+    <test started-at="2023-01-02T14:23:04 IST" name="Test" finished-at="2023-01-02T14:23:10 IST" duration-ms="6184">
+      <class name="com.obsqura.testscripts.JavaScriptExecuterDemoTest">
+        <test-method is-config="true" signature="InitializeBrowser()[pri:0, instance:com.obsqura.testscripts.JavaScriptExecuterDemoTest@7205765b]" started-at="2023-01-02T14:23:04 IST" name="InitializeBrowser" finished-at="2023-01-02T14:23:09 IST" duration-ms="5585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- InitializeBrowser -->
-        <test-method signature="verifyTwoInputFieldColorAndGetMsg()[pri:0, instance:com.obsqura.testscripts.selectInputDemoTest@16610890]" started-at="2022-12-07T19:03:19 IST" name="verifyTwoInputFieldColorAndGetMsg" finished-at="2022-12-07T19:03:20 IST" duration-ms="787" status="PASS">
+        <test-method signature="javaScriptExecters()[pri:0, instance:com.obsqura.testscripts.JavaScriptExecuterDemoTest@7205765b]" started-at="2023-01-02T14:23:09 IST" name="javaScriptExecters" finished-at="2023-01-02T14:23:10 IST" duration-ms="295" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTwoInputFieldColorAndGetMsg -->
-        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:com.obsqura.testscripts.selectInputDemoTest@16610890]" started-at="2022-12-07T19:03:20 IST" name="BrowserClose" finished-at="2022-12-07T19:03:20 IST" duration-ms="162" status="PASS">
+        </test-method> <!-- javaScriptExecters -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:com.obsqura.testscripts.JavaScriptExecuterDemoTest@7205765b]" started-at="2023-01-02T14:23:10 IST" name="BrowserClose" finished-at="2023-01-02T14:23:10 IST" duration-ms="239" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserClose -->
-      </class> <!-- com.obsqura.testscripts.selectInputDemoTest -->
+      </class> <!-- com.obsqura.testscripts.JavaScriptExecuterDemoTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
