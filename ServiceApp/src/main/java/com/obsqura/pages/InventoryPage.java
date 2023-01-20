@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.obsqura.utilities.ExcelUtility;
 import com.obsqura.utilities.PageUtility;
@@ -50,6 +51,10 @@ public class InventoryPage {
 	    @FindBy(xpath="//input[@id='unit']")
 	    private WebElement productUnit;
 	    
+	    @FindBy(xpath="//input[@id='cost']")
+	    private WebElement productCost;
+	  
+	    
 	    @FindBy(xpath="//input[@id='price']")
 	    private WebElement productPrice;
 	       
@@ -68,12 +73,27 @@ public class InventoryPage {
 	    @FindBy(xpath="//button[@class='btn btn-default btn-xs btn-primary dropdown-toggle']")
 		private WebElement blueActionButton;
 	    
-	    @FindBy(xpath ="//a[@class='bpo']")
+	    @FindBy(xpath ="//a[@class='tip btn btn-danger bpo'] ")
 	    private WebElement delectButton;
-		 	 
 	    
+	    @FindBy(xpath ="//a[@class='btn btn-danger']")
+	    private WebElement delectConformation;
 	    
-	    public void addInventoryProduct() throws IOException {
+	    @FindBy(xpath ="//section[@class='content-header']")
+	    private WebElement homeHeader;
+	      
+	    @FindBy(xpath ="//input[@class='form-control input-sm input-xs']")
+	    private WebElement searchButton;
+	    
+	    @FindBy(xpath ="//tr[@class='product_link']")
+	    private List<WebElement> rowCount;
+	    
+	    @FindBy(xpath ="//div[@class='alert alert-success']")
+	    private WebElement sucessMsg;
+	    
+	   
+	    
+	    public void addInventoryProduct() throws IOException { 	
 	    	String type = ExcelUtility.getString(8, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	String name = ExcelUtility.getString(1, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	String path = ExcelUtility.getString(2, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
@@ -82,8 +102,9 @@ public class InventoryPage {
 	        String quality= ExcelUtility.getNumeric(4, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String supplier = ExcelUtility.getString(9, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String unit= ExcelUtility.getNumeric(5, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String cost = ExcelUtility.getNumeric(10, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String price= ExcelUtility.getNumeric(6, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        
+	        String msg = ExcelUtility.getNumeric(11, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
 	    	PageUtility.clickOnElement(actionsIcon);
 	    	PageUtility.clickOnElement(addProduct);
@@ -104,27 +125,42 @@ public class InventoryPage {
 	    	Select obj2 = new Select(productSupplier);
 	    	obj2.selectByVisibleText(supplier);
 	    	PageUtility.enterStringValue(productUnit, unit);
+	    	PageUtility.enterStringValue(productCost, cost);
 	    	PageUtility.enterStringValue(productPrice, price);
 	    	PageUtility.enterStringValue(productImage, path);
-	    	PageUtility.clickOnElement(submit);
 	    	
+	    	PageUtility.clickOnElement(submit);
+	    	String getSubmitMsg =  sucessMsg.getText();
+	    	String expectedMsg = msg ;
+	    	Assert.assertEquals(getSubmitMsg, expectedMsg);
 	    }   
 	    
-	    public void delectInventoryVerification() {
-	    	String actualMsg,expectedMsg="37";
+	    public void delectInventoryVerification() throws IOException {
+	    	String idNumb = ExcelUtility.getString(14, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String actualMsg;
 	    	boolean compareElement;
-	    
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
 	    	for(WebElement row:rowNumber) {
 				actualMsg =row.getAttribute("id");
-				compareElement = actualMsg.contentEquals("37");
+				compareElement = actualMsg.contentEquals(idNumb);
 				if(compareElement) {
 			    row.click();
-			    continue;
+			    break;
 				}
-				PageUtility.clickOnElement(delectButton);
-		
-				
 	    	}
+	    	PageUtility.clickOnElement(delectButton);
+	    	PageUtility.clickOnElement(delectConformation);
+	    	boolean backToHomePage = homeHeader.isDisplayed();
+	    	Assert.assertTrue(backToHomePage,"Inventory is not delected");
+	    	
 	    }
+	    
+	    public void rowCountWithSameNameVerification() {
+			  int expectedNumber=9,actualNumber;
+			  PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+			  PageUtility.clickOnElement(searchButton);
+			  PageUtility.enterStringValue(searchButton, "LankyBox");
+			  actualNumber = rowCount.size();
+			  Assert.assertEquals(actualNumber, expectedNumber,"Both are not same");
+		  }
 }

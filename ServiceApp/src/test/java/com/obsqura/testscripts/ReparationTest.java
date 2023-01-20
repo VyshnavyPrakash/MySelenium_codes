@@ -25,4 +25,19 @@ public class ReparationTest extends Base {
 		obj1.loginAccountVerification();
 		obj.downloadingReparationExcelSheet();
 	}
+	@Test
+	public void verifycolumnVisibility() throws IOException {
+		obj = new ReparationPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.columnVisibilityVerification();
+	}
+	@Test
+	public void verifyRowCountWithSameName() throws IOException {
+		obj = new ReparationPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.rowCountWithSameNameVerification();
+		 
+	}
 }

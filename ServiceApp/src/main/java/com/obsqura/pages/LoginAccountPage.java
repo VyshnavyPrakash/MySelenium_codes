@@ -34,12 +34,24 @@ import com.obsqura.utilities.PageUtility;
 	 @FindBy(xpath="//i[@class='fa fa-exclamation-triangle']")
 	 private WebElement alertIcon;
 	 
-	 @FindBy(xpath="//img[@class='user-image']")
+	 @FindBy(xpath="//ul[@class='dropdown-menu']")
 	 private WebElement userImage;
 	 
 	 @FindBy(xpath="//a[@class='btn btn-default btn-flat']")
 	 private WebElement signOut;
-	
+	 
+	 @FindBy(xpath="//a[@href='https://qalegend.com/mobile_service//panel/login/forgot_password']")
+	 private WebElement forgotPassword;
+	 
+	 @FindBy(xpath="//input[@id = 'identity']")
+	 private WebElement resetEmail;
+	 
+	 @FindBy(xpath="//input[@class='btn btn-primary btn-block btn-flat']")
+	 private WebElement resetEmailSubmitButton;
+	  
+	 @FindBy(xpath="//div[@id ='infoMessage']")
+	 private WebElement infoMsg;
+	  
 	 
   public void loginAccountVerification() throws IOException {
 	  String expectedMsg,actualMsg = ExcelUtility.getString(3, 2, System.getProperty("user.dir")+ Constants.Constants.EXCELFILE, "Sheet1");
@@ -60,18 +72,30 @@ import com.obsqura.utilities.PageUtility;
 	  PageUtility.enterStringValue(password, Wrongpass);
 	  PageUtility.clickOnElement(loginButton);
 	  boolean loginButtonDisplayed = loginButton.isDisplayed();
-	  Assert.assertTrue(loginButtonDisplayed,"Navigated to next page");
+	  Assert.assertTrue(loginButtonDisplayed,"login sucessfull");
 	  
   }
   
-  public void logoutVerification() {
+  public void forgotPasswordVerification() {
+	  String actualMsg,expectedMsg="No record of that email address.";
+	  PageUtility.clickOnElement(forgotPassword);
+	  PageUtility.enterStringValue(resetEmail, "vyshnavyprakash1805@gmail.com");
+	  PageUtility.clickOnElement(resetEmailSubmitButton);
+	  actualMsg = infoMsg.getText();
+	  Assert.assertEquals(actualMsg, expectedMsg,"Messages are not same");
 	  
+	  
+  }
+  public void logoutVerification() {
+	  boolean userImageEnabled = userImage.isEnabled();
 	  PageUtility.clickOnElement(userImage);
 	  boolean signOutDisplayed =  signOut.isDisplayed();
 	  boolean signOutEnabled = signOut.isEnabled();
 	  if(signOutEnabled) {
 		  PageUtility.clickOnElement(signOut); 
 	  }
+	  Assert.assertTrue(signOutDisplayed,"Is not Displayed");
+	  Assert.assertTrue(signOutEnabled,"Is not Enabled");
     }
   
   }

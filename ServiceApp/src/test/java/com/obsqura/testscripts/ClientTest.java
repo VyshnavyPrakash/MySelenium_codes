@@ -11,7 +11,7 @@ import com.obsqura.pages.LoginAccountPage;
 public class ClientTest extends Base {
 	ClientPage obj;
 	LoginAccountPage obj1;
-	
+	@Test
 	public void verifyThatUserIsAbleToAddClient() throws IOException {
 		obj = new ClientPage(driver);
 		obj1 = new LoginAccountPage(driver);

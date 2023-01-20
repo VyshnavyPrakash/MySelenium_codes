@@ -46,25 +46,25 @@ import com.obsqura.utilities.ScreenShotUtilities;
 				} catch (Exception e) {		
 				}
 				if(browser.equalsIgnoreCase("firefox")){
-					//create firefox instance
+					
 						System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
 						driver = new FirefoxDriver();
 					}
-					//Check if parameter passed as 'chrome'
+					
 					else if(browser.equalsIgnoreCase("chrome")){
 						//set path to chromedriver.exe
 						System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") +Constants.Constants.chrome);
 						driver = (WebDriver) new ChromeDriver();
 					}
-					//Check if parameter passed as 'Edge'
+				
 					else if(browser.equalsIgnoreCase("Edge")){
-						//set path to Edge.exe
+						
 						System.setProperty("webdriver.edge.driver",System.getProperty("user.dir") +Constants.Constants.edge);
-						//create Edge instance
+						
 						driver = new EdgeDriver();
 							}
 					else{
-						//If no browser passed throw exception
+						
 						throw new Exception("Browser is not correct");
 					}
 
@@ -75,10 +75,11 @@ import com.obsqura.utilities.ScreenShotUtilities;
 			
 			@AfterMethod
 			public void browserQuit(ITestResult iTestResult) throws IOException {
-				if (iTestResult.getStatus() == ITestResult.FAILURE) {
-					scrshot = new ScreenShotUtilities();
-					scrshot.getScreenShot(driver, iTestResult.getName());
+			  if (iTestResult.getStatus() == ITestResult.FAILURE) {
+				  scrshot = new ScreenShotUtilities();
+				  scrshot.getScreenShot(driver, iTestResult.getName());
 				}
+
 				driver.quit();
 			}		
 		}

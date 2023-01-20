@@ -26,5 +26,12 @@ public class InventoryTest extends Base{
 		obj1.loginAccountVerification();
 		obj.delectInventoryVerification();
 	}
+	@Test
+	public void verifyrowCountWithSameName() throws IOException {
+		obj = new InventoryPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.rowCountWithSameNameVerification();
+	}
 
 }

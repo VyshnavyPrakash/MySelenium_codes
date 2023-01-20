@@ -9,18 +9,23 @@ import com.obsqura.pages.LoginAccountPage;
 
 public class LoginAccountTest extends Base {
 	LoginAccountPage obj;
+	
 	@Test
 	public void verifyUserIsAbleToLogin() throws IOException {
 		obj = new LoginAccountPage(driver);
 		obj.loginAccountVerification();
-		
 	}
 	@Test
 	public void verifyLoginWithWrongPassword() throws IOException {
 		obj = new LoginAccountPage(driver);
 		obj.loginWithWrongPassword();
 	}
-	
+	@Test
+	public void verifyForgotPassword() {
+		obj = new LoginAccountPage(driver);
+		obj.forgotPasswordVerification();
+	}
+	@Test
 	public void verifyUserIsAbleToLogOut() throws IOException {
 		obj = new LoginAccountPage(driver);
 		obj.loginWithWrongPassword();

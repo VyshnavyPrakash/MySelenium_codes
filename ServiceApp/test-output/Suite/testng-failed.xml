@@ -7,13 +7,13 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.obsqura.testscripts.HomeTest">
+      <class name="com.obsqura.testscripts.InventoryTest">
         <methods>
           <include name="InitializeBrowser"/>
-          <include name="verifyQuickEmailFieldWithoutSubject"/>
+          <include name="verifyDelectingInventory"/>
           <include name="browserQuit"/>
         </methods>
-      </class> <!-- com.obsqura.testscripts.HomeTest -->
+      </class> <!-- com.obsqura.testscripts.InventoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

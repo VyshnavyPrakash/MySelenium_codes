@@ -24,7 +24,7 @@
   <methods>
     <include name="verifyUserIsAbleToLogin"></include>
     </methods>
-    </class>
+    </class>   
  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
