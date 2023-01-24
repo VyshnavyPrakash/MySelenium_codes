@@ -20,7 +20,6 @@ public class InventoryPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
 	    @FindBy(xpath="//a[@ href='https://qalegend.com/mobile_service/panel/inventory']")
 	    private WebElement inventoryProductMoreInfoOption;
 	    
@@ -54,7 +53,6 @@ public class InventoryPage {
 	    @FindBy(xpath="//input[@id='cost']")
 	    private WebElement productCost;
 	  
-	    
 	    @FindBy(xpath="//input[@id='price']")
 	    private WebElement productPrice;
 	       
@@ -91,7 +89,20 @@ public class InventoryPage {
 	    @FindBy(xpath ="//div[@class='alert alert-success']")
 	    private WebElement sucessMsg;
 	    
-	   
+	    @FindBy(xpath ="//a[text()='Next > ']")
+	    private WebElement nextButton;
+	    
+	    @FindBy(xpath ="//div[@id='PRData_info']")
+	    private WebElement entryMsg;
+	    
+	    @FindBy(xpath ="//a[@class='tip btn btn-warning tip']")
+	    private WebElement editOption;
+	    
+	    @FindBy(xpath ="//input[@class='btn btn-primary']")
+	    private WebElement editProductButton;
+	    
+	    @FindBy(xpath ="//div[@class='alert alert-success']")
+	    private WebElement editUpdateMsg;
 	    
 	    public void addInventoryProduct() throws IOException { 	
 	    	String type = ExcelUtility.getString(8, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
@@ -132,8 +143,8 @@ public class InventoryPage {
 	    	PageUtility.clickOnElement(submit);
 	    	String getSubmitMsg =  sucessMsg.getText();
 	    	String expectedMsg = msg ;
-	    	Assert.assertEquals(getSubmitMsg, expectedMsg);
-	    }   
+	    	Assert.assertEquals(getSubmitMsg, expectedMsg,"Both messages are not same");
+	       }   
 	    
 	    public void delectInventoryVerification() throws IOException {
 	    	String idNumb = ExcelUtility.getString(14, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
@@ -151,16 +162,48 @@ public class InventoryPage {
 	    	PageUtility.clickOnElement(delectButton);
 	    	PageUtility.clickOnElement(delectConformation);
 	    	boolean backToHomePage = homeHeader.isDisplayed();
-	    	Assert.assertTrue(backToHomePage,"Inventory is not delected");
-	    	
+	    	Assert.assertTrue(backToHomePage,"Inventory is not delected");    	
+	       }
+	      
+	    public void rowCountWithSameNameVerification() {
+			 int expectedNumber=9,actualNumber;
+			 PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+			 PageUtility.clickOnElement(searchButton);
+			 PageUtility.enterStringValue(searchButton, "LankyBox");
+			 actualNumber = rowCount.size();
+			 Assert.assertEquals(actualNumber, expectedNumber,"Both are not same");
+		  }
+	    
+	    public void navigateToNextPageOnClickingNextOptionVerification() {
+	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+	    	boolean nextButtonIsDisplayed = nextButton.isDisplayed();
+	    	boolean nextButtonIsEnabled = nextButton.isEnabled();
+	    	PageUtility.clickOnElement(nextButton); 
+	    	String actualMsg = entryMsg.getText();
+	    	String expectedMsg = "Showing 26 to 32 of 32 entries" ;
+	    	Assert.assertTrue(nextButtonIsDisplayed);
+	    	Assert.assertTrue(nextButtonIsEnabled);
+	    	Assert.assertEquals(actualMsg, expectedMsg,"Both messages are not same");
 	    }
 	    
-	    public void rowCountWithSameNameVerification() {
-			  int expectedNumber=9,actualNumber;
-			  PageUtility.clickOnElement(inventoryProductMoreInfoOption);
-			  PageUtility.clickOnElement(searchButton);
-			  PageUtility.enterStringValue(searchButton, "LankyBox");
-			  actualNumber = rowCount.size();
-			  Assert.assertEquals(actualNumber, expectedNumber,"Both are not same");
-		  }
+	    public void UserIsAbleToEditInventoryProductVerification() {
+	        String actualMsg;
+	        boolean compareElement;
+	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+	    	PageUtility.clickOnElement(actionsIcon);
+	    	for(WebElement row:rowNumber) {
+				actualMsg =row.getAttribute("id");
+				compareElement = actualMsg.contentEquals("117");
+				if(compareElement) {
+			    row.click();
+			    break;
+				}
+				PageUtility.clickOnElement(editOption);
+				PageUtility.clickOnElement(editProductButton);
+				String actualAlertMsg = editUpdateMsg.getText();
+				String expectedAlertMsg = "Product successfully updated";
+				Assert.assertEquals(actualAlertMsg, expectedAlertMsg,"Both messages are not same");	
+	    }
+	    	
+	    }
 }

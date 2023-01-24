@@ -61,9 +61,8 @@ import com.obsqura.utilities.PageUtility;
 	  PageUtility.enterStringValue(password, pass);
 	  PageUtility.clickOnElement(loginButton);
       expectedMsg = LoginSucessfullMsg.getText();
-      Assert.assertEquals(actualMsg, expectedMsg,"Login Unsucessfull");
-      
-  }
+      Assert.assertEquals(actualMsg, expectedMsg,"Login Unsucessfull");    
+      }
   public void loginWithWrongPassword() throws IOException {
 	
 	  String username = ExcelUtility.getString(1, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet1");
@@ -73,9 +72,7 @@ import com.obsqura.utilities.PageUtility;
 	  PageUtility.clickOnElement(loginButton);
 	  boolean loginButtonDisplayed = loginButton.isDisplayed();
 	  Assert.assertTrue(loginButtonDisplayed,"login sucessfull");
-	  
   }
-  
   public void forgotPasswordVerification() {
 	  String actualMsg,expectedMsg="No record of that email address.";
 	  PageUtility.clickOnElement(forgotPassword);
@@ -83,8 +80,6 @@ import com.obsqura.utilities.PageUtility;
 	  PageUtility.clickOnElement(resetEmailSubmitButton);
 	  actualMsg = infoMsg.getText();
 	  Assert.assertEquals(actualMsg, expectedMsg,"Messages are not same");
-	  
-	  
   }
   public void logoutVerification() {
 	  boolean userImageEnabled = userImage.isEnabled();
@@ -96,8 +91,7 @@ import com.obsqura.utilities.PageUtility;
 	  }
 	  Assert.assertTrue(signOutDisplayed,"Is not Displayed");
 	  Assert.assertTrue(signOutEnabled,"Is not Enabled");
-    }
-  
+      }
   }
 		
   	

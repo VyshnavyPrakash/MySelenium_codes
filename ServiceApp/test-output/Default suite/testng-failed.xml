@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.testscripts.ClientTest">
+      <class name="com.obsqura.testscripts.LoginAccountTest">
         <methods>
           <include name="InitializeBrowser"/>
-          <include name="verifyClientDetailsExportToPdfFile"/>
+          <include name="verifyUserIsAbleToLogin"/>
+          <include name="verifyForgotPassword"/>
+          <include name="verifyUserIsAbleToLogOut"/>
           <include name="browserQuit"/>
+          <include name="verifyLoginWithWrongPassword"/>
         </methods>
-      </class> <!-- com.obsqura.testscripts.ClientTest -->
+      </class> <!-- com.obsqura.testscripts.LoginAccountTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -10,7 +10,7 @@
       <class name="com.obsqura.testscripts.InventoryTest">
         <methods>
           <include name="InitializeBrowser"/>
-          <include name="verifyDelectingInventory"/>
+          <include name="verifyUserIsAbleToNavigateToNextPageOnClickingNextOption"/>
           <include name="browserQuit"/>
         </methods>
       </class> <!-- com.obsqura.testscripts.InventoryTest -->

@@ -46,4 +46,11 @@ public class ClientTest extends Base {
 		 obj1.loginAccountVerification();
 		 obj.clientDetailsExportToPdfFile();
 	}
+	@Test
+	public void vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification() throws IOException {
+		 obj = new ClientPage(driver);
+		 obj1 = new LoginAccountPage(driver);
+		 obj1.loginAccountVerification();
+		 obj.navigateToNextPageOnClickingNextOptionVerification();
+	}
 }

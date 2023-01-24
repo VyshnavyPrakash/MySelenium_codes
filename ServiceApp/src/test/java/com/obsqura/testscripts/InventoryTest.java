@@ -17,7 +17,6 @@ public class InventoryTest extends Base{
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.addInventoryProduct();
-		
 	}
 	@Test
 	public void verifyDelectingInventory() throws IOException {
@@ -32,6 +31,13 @@ public class InventoryTest extends Base{
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.rowCountWithSameNameVerification();
+	}
+	@Test
+	public void verifyUserIsAbleToNavigateToNextPageOnClickingNextOption() throws IOException {
+		obj = new InventoryPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.navigateToNextPageOnClickingNextOptionVerification();
 	}
 
 }

@@ -45,7 +45,6 @@ public class ClientPage {
 	  @FindBy(xpath="//div[@id='titoloclienti']")
 	  private WebElement clientNameTitle;
 	  
-	 
 	  @FindBy(xpath="//body[@class='sidebar-mini skin-red skin-custom']")
 	  private WebElement goBackButton;
 	 
@@ -82,6 +81,11 @@ public class ClientPage {
 	  @FindBy(xpath="//a[@href='https://qalegend.com/mobile_service/panel/customers/export_csv']")
 	  private WebElement exportToExcelButton;
 	 	 
+	  @FindBy(xpath ="//a[text()='Next > ']")
+	  private WebElement nextButton;
+	    
+	  @FindBy(xpath ="//div[@id='dynamic-table_info']")
+	  private WebElement entryMsg;
 	  
 	 public void addingClientDetails() throws IOException {
 		 boolean submitButtonDisplayed,submitButtonEnabled;
@@ -100,11 +104,11 @@ public class ClientPage {
 		 if(submitButtonEnabled) {
 		 PageUtility.clickOnElement(submitButton);
 		 }
-		  String actualMsg = clientNameTitle.getText();
-		  String expectedMsg = "Client: "+name;
-		  Assert.assertEquals(actualMsg, expectedMsg,"Not Submitted");
-		  Assert.assertTrue(submitButtonDisplayed);
-		  Assert.assertTrue(submitButtonEnabled);
+		 String actualMsg = clientNameTitle.getText();
+		 String expectedMsg = "Client: "+name;
+		 Assert.assertEquals(actualMsg, expectedMsg,"Not Submitted");
+		 Assert.assertTrue(submitButtonDisplayed);
+		 Assert.assertTrue(submitButtonEnabled);
 	 }
 	 
 	public void delectingClientDetails() throws IOException {	
@@ -143,13 +147,13 @@ public class ClientPage {
 		  PageUtility.clickOnElement(clientMoreInfo);
 		  mainActionButtonDisplayed=mainActionButton.isDisplayed();
 		  mainActionButtonEnabled = mainActionButton.isEnabled();
-		   if(mainActionButtonEnabled) {
-		    PageUtility.clickOnElement(mainActionButton);
+		  if(mainActionButtonEnabled) {
+		  PageUtility.clickOnElement(mainActionButton);
 		   }
 	      exportToExcelButtonDisplayed = exportToExcelButton.isDisplayed();
 		  exportToExcelButtonEnabled = exportToExcelButton.isEnabled();
-		   if(exportToExcelButtonEnabled) {
-		   PageUtility.clickOnElement(exportToExcelButton);
+		  if(exportToExcelButtonEnabled) {
+		  PageUtility.clickOnElement(exportToExcelButton);
 		  }
 		  Assert.assertTrue(exportToExcelButtonDisplayed);
 		  Assert.assertTrue(exportToExcelButtonEnabled);
@@ -162,21 +166,33 @@ public class ClientPage {
 		 PageUtility.clickOnElement(clientMoreInfo);
 		 mainActionButtonDisplayed=mainActionButton.isDisplayed();
 		 mainActionButtonEnabled = mainActionButton.isEnabled();
-		  if(mainActionButtonEnabled) {
-		  PageUtility.clickOnElement(mainActionButton);
-		   }
+		 if(mainActionButtonEnabled) {
+		 PageUtility.clickOnElement(mainActionButton);
+		 }
 		 exportToPdfFileDisplayed = exportToPdfFile.isDisplayed();
 		 exportToPdfFileEnabled = exportToPdfFile.isEnabled();
-		  if(exportToPdfFileEnabled) {
-		  PageUtility.clickOnElement(exportToPdfFile);
-		  }
-		Assert.assertTrue(mainActionButtonDisplayed);
-		Assert.assertTrue(mainActionButtonEnabled);
-	    Assert.assertTrue(exportToPdfFileDisplayed);
-		Assert.assertTrue(exportToPdfFileEnabled);
-	}
-}
+		 if(exportToPdfFileEnabled) {
+		 PageUtility.clickOnElement(exportToPdfFile);
+		 }
+		 Assert.assertTrue(mainActionButtonDisplayed);
+		 Assert.assertTrue(mainActionButtonEnabled);
+	     Assert.assertTrue(exportToPdfFileDisplayed);
+		 Assert.assertTrue(exportToPdfFileEnabled);
+	     }
 	
+	public void navigateToNextPageOnClickingNextOptionVerification() {
+    	
+    	PageUtility.clickOnElement(clientMoreInfo);
+    	boolean nextButtonIsDisplayed = nextButton.isDisplayed();
+    	boolean nextButtonIsEnabled = nextButton.isEnabled();
+    	PageUtility.clickOnElement(nextButton); 
+    	String actualMsg = entryMsg.getText();
+    	String expectedMsg = "Showing 26 to 50 of 801 entries";
+    	Assert.assertTrue(nextButtonIsDisplayed);
+    	Assert.assertTrue(nextButtonIsEnabled);
+    	Assert.assertEquals(actualMsg, expectedMsg);
+}
+}
 		
 	
 
