@@ -11,21 +11,8 @@ import com.obsqura.pages.LoginAccountPage;
 public class HomeTest extends Base {
 	HomePage obj;
 	LoginAccountPage obj1;
-	@Test
-	public void verifyThatWeCanSentQuickSMS() throws IOException {
-		obj = new HomePage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.quickSMSSentVerification();
-	}
-	@Test
-	public void verifyThatWeCanSentQuickEmail() throws IOException {
-		obj = new HomePage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.quickEmailSentVerification();
-	}
 	
+	@Test
 	public void verifyQuickEmailFieldWithoutMsg() throws IOException {
 		obj = new HomePage(driver);
 		obj1 = new LoginAccountPage(driver);

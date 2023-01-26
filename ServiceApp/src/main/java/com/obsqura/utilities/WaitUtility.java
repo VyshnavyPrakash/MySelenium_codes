@@ -1,6 +1,7 @@
 package com.obsqura.utilities;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,11 +13,15 @@ public class WaitUtility {
 	
 	public static final long IMPLICIT_WAIT = 20;
 	public static final long PAGE_LOAD_WAIT = 20;
-	public static final long EXPLICIT_WAIT = 50;
+	public static final long EXPLICIT_WAIT = 20;
 	
 	public static void waitForElement(WebDriver driver, WebElement target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.visibilityOf(target));
+	}
+	public static void waitForElement(WebDriver driver, List<WebElement> target) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.visibilityOf((WebElement) target));
 	}
 	public static void waitForElement(WebDriver driver, By target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
@@ -34,6 +39,11 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.presenceOfElementLocated(target));
     }
+	
+	public static void waitForElementIsPresent(WebDriver driver, WebElement target) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.textToBePresentInElementValue(target, null));
+    }
 	public static void waitForAlterIsPresent(WebDriver driver, By target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.alertIsPresent());
@@ -41,6 +51,15 @@ public class WaitUtility {
 	public static void waitForElementToBeSelected(WebDriver driver, By target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.elementToBeSelected(target));
+    }
+	public static void waitForElementToBeSelected(WebDriver driver, WebElement target) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.elementToBeSelected(target));
+    }
+	
+	public static void waitForElementToBeSelected(WebDriver driver, List<WebElement> target) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.elementToBeSelected((WebElement) target));
     }
 	public static void waitForFrameToBeAvailableAndSwitchToIt(WebDriver driver, By target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
@@ -62,9 +81,9 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.presenceOfElementLocated(target));
 	}
-	public static void waitForTextToBePresentInElementLocated(WebDriver driver, By target) {
+	public static void waitForTextToBePresentInElementLocated(WebDriver driver, By target,String value) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
-		wait.until(ExpectedConditions.textToBePresentInElementLocated(target, null));
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(target, value));
 	}
 	public static void waitForAttributeToBe(WebDriver driver, By target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
@@ -74,6 +93,7 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(target));
 	}
+	
 	
 	
 }

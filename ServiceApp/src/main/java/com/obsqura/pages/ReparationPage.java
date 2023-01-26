@@ -1,4 +1,4 @@
-package com.obsqura.pages;
+   package com.obsqura.pages;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,6 +31,9 @@ public class ReparationPage {
 		 @FindBy(xpath="//select[@class='form-control input-sm select input-xs' and @name ='dynamic-table_length']")
 		 private WebElement showNumberOfTables;
 		 
+		 @FindBy(xpath="//select[@class='form-control input-sm select input-xs' and @aria-controls='dynamic-table-completed']")
+		 private WebElement showDropDown;
+		 
 		 @FindBy(xpath="//a[@href='#CompletedRepairs']")
 	     private WebElement completeRepair;
 		 
@@ -56,7 +59,8 @@ public class ReparationPage {
 		 private List<WebElement> rowCount;
 		 
 	  public void rowNumberInShowButtonVerification() throws IOException {
-		  int expectedNumber=10,actualNumber;
+	
+		  int actualNumber;
 		  PageUtility.clickOnElement(reperationMoreInfoIcon);	
 		  PageUtility.clickOnElement(completeRepair);
 		  Select obj = new Select(showNumberOfTables);
@@ -96,4 +100,14 @@ public class ReparationPage {
 		  actualNumber = rowCount.size();
 		  Assert.assertEquals(actualNumber, expectedNumber,"Both are not same");
 	  }
+	  
+	  public void totalCompletedRepairRows() {
+		  int expectedNumb = 38,actualNumber;
+		  PageUtility.clickOnElement(reperationMoreInfoIcon);
+		  PageUtility.clickOnElement(completeRepair);
+		  PageUtility.selectDropdownbyValue(showDropDown, "-1");
+		  actualNumber = rowsNumber.size();
+		  Assert.assertEquals(actualNumber, expectedNumb,"both numbers are not same");
+		  
+}
 }

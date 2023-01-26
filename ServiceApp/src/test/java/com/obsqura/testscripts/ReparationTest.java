@@ -38,6 +38,12 @@ public class ReparationTest extends Base {
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.rowCountWithSameNameVerification();
-		 
+	}
+	@Test
+	public void verifyTotalCompletedRepairRows() throws IOException {
+		obj = new ReparationPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.totalCompletedRepairRows();
 	}
 }

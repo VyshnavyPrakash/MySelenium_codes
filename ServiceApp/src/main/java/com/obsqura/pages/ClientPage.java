@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,8 +13,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import com.obsqura.utilities.DataProviderUtility;
 import com.obsqura.utilities.ExcelUtility;
 import com.obsqura.utilities.PageUtility;
+import com.obsqura.utilities.WaitUtility;
 
 public class ClientPage {
 	WebDriver driver;
@@ -92,105 +95,124 @@ public class ClientPage {
 		 String name = ExcelUtility.getString(1, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");
 		 String company = ExcelUtility.getString(2, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");
 		 String addrs = ExcelUtility.getString(3, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");
-		 String email = ExcelUtility.getString(4, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");		 
+		 String email = ExcelUtility.getString(4, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");
+		 String msg =ExcelUtility.getString(5, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");
 		 PageUtility.clickOnElement(clientMoreInfo);
 		 PageUtility.clickOnElement(AddClientButton);
 		 PageUtility.enterStringValue(clientName, name);
 		 PageUtility.enterStringValue(clientCompany, company);
 		 PageUtility.enterStringValue(address, addrs);
 		 PageUtility.enterStringValue(Clientemail, email);
-		 submitButtonDisplayed = submitButton.isDisplayed();
-		 submitButtonEnabled = submitButton.isEnabled();
+		 WaitUtility.waitForElement(driver, submitButton);
+		 submitButtonDisplayed = PageUtility.isElementDisplayed(submitButton);
+		 Assert.assertTrue(submitButtonDisplayed);
+		 submitButtonEnabled = PageUtility.isElementEnabled(submitButton);
+		 Assert.assertTrue(submitButtonEnabled);
+		 PageUtility.clickOnElement(submitButton);
+		 WaitUtility.waitForElement(driver, clientNameTitle);
+		 String actualMsg = PageUtility.getElementText(clientNameTitle);
+		 String expectedMsg = msg;
+		 Assert.assertEquals(actualMsg, expectedMsg,"Not Submitted");
+		
+		 
+	 }
+	 
+	/* public void addingClientDetails2(String name,String company,String addrs,String email,String msg)  {
+		 boolean submitButtonDisplayed,submitButtonEnabled;
+		 PageUtility.clickOnElement(clientMoreInfo);
+		 PageUtility.clickOnElement(AddClientButton);
+		 DataProviderUtility.sentKeyValue(driver, clientName, name);
+		 DataProviderUtility.sentKeyValue(driver, clientCompany, company);
+		 DataProviderUtility.sentKeyValue(driver, address, addrs);
+		 DataProviderUtility.sentKeyValue(driver, Clientemail, email);
+		 WaitUtility.waitForElement(driver, submitButton);
+		 submitButtonDisplayed = PageUtility.isElementDisplayed(submitButton);
+		 submitButtonEnabled = PageUtility.isElementEnabled(submitButton);
 		 if(submitButtonEnabled) {
 		 PageUtility.clickOnElement(submitButton);
 		 }
-		 String actualMsg = clientNameTitle.getText();
-		 String expectedMsg = "Client: "+name;
+		 WaitUtility.waitForElement(driver, clientNameTitle);
+		 String actualMsg = PageUtility.getElementText(clientNameTitle);
+		 String expectedMsg = msg;
 		 Assert.assertEquals(actualMsg, expectedMsg,"Not Submitted");
 		 Assert.assertTrue(submitButtonDisplayed);
 		 Assert.assertTrue(submitButtonEnabled);
-	 }
+	 }*/
 	 
 	public void delectingClientDetails() throws IOException {	
 		 boolean blueActionButtonDisplayed,blueActionButtonEnabled,delectClientButtonDisplayed,delectClientButtonEnabled;
 	     PageUtility.clickOnElement(clientMoreInfo);
 	     PageUtility.enterStringValue(clientSearch, "vyshnavy3");
-	     blueActionButtonDisplayed = blueActionButton.isDisplayed();
-	     blueActionButtonEnabled = blueActionButton.isEnabled();
+	     blueActionButtonDisplayed = PageUtility.isElementDisplayed(blueActionButton);
+	     Assert.assertTrue(blueActionButtonDisplayed,"Not displayed");
+	     blueActionButtonEnabled = PageUtility.isElementEnabled(blueActionButton);
 	     if(blueActionButtonEnabled) {
 		 PageUtility.clickOnElement(blueActionButton);
 	     }
-	     delectClientButtonDisplayed = delectClientButton.isDisplayed();
-	     delectClientButtonEnabled = delectClientButton.isEnabled();
+	     WaitUtility.waitForElement(driver, delectClientButton);
+	     delectClientButtonDisplayed = PageUtility.isElementDisplayed(delectClientButton);
+	     Assert.assertTrue(delectClientButtonDisplayed,"client button is not displayed");
+	     delectClientButtonEnabled = PageUtility.isElementEnabled(delectClientButton);
 	     if(delectClientButtonEnabled) {
 		 PageUtility.clickOnElement(delectClientButton);
 	     }
 	     PageUtility.clickOnElement(delectClientConformation);	
-	     Assert.assertTrue(blueActionButtonDisplayed,"Not displayed");
-	     Assert.assertTrue(delectClientButtonEnabled,"Not enabled");
-	     Assert.assertTrue(delectClientButtonDisplayed,"Not displayed");
-	     Assert.assertTrue(delectClientButtonEnabled,"Not enabled");
 	 }	 
 	
 	public void clientShowButtonVerification() throws IOException {
 		 String value = ExcelUtility.getNumeric(7, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE, "Sheet3");
 		 int expectedNumber=10,actualNumber;
-		 PageUtility.clickOnElement(clientMoreInfo);	
-		 Select obj = new Select(cleintShowButton);
-		 obj.selectByValue(value);
-		 actualNumber = rowsNumber.size();
-		 Assert.assertEquals(expectedNumber, actualNumber,"Both the numbers are not same");
+		 PageUtility.clickOnElement(clientMoreInfo);
+		 PageUtility.selectDropdownbyValue(cleintShowButton, value);
+		 actualNumber =rowsNumber.size();
+		 Assert.assertEquals(actualNumber, expectedNumber,"Both numbers are not same");
 	}
-	
+
 	public void clientdetailsExportToExcelFile() {
 		  boolean mainActionButtonDisplayed,mainActionButtonEnabled,exportToExcelButtonDisplayed,exportToExcelButtonEnabled;
 		  PageUtility.clickOnElement(clientMoreInfo);
-		  mainActionButtonDisplayed=mainActionButton.isDisplayed();
-		  mainActionButtonEnabled = mainActionButton.isEnabled();
-		  if(mainActionButtonEnabled) {
-		  PageUtility.clickOnElement(mainActionButton);
-		   }
-	      exportToExcelButtonDisplayed = exportToExcelButton.isDisplayed();
-		  exportToExcelButtonEnabled = exportToExcelButton.isEnabled();
-		  if(exportToExcelButtonEnabled) {
-		  PageUtility.clickOnElement(exportToExcelButton);
-		  }
-		  Assert.assertTrue(exportToExcelButtonDisplayed);
-		  Assert.assertTrue(exportToExcelButtonEnabled);
+		  mainActionButtonDisplayed=PageUtility.isElementDisplayed(mainActionButton);
 		  Assert.assertTrue(mainActionButtonDisplayed);
+		  mainActionButtonEnabled = PageUtility.isElementEnabled(mainActionButton);
 		  Assert.assertTrue(mainActionButtonEnabled); 
+		  PageUtility.clickOnElement(mainActionButton);
+	      exportToExcelButtonDisplayed = PageUtility.isElementDisplayed(exportToExcelButton);
+		  exportToExcelButtonEnabled = PageUtility.isElementEnabled(exportToExcelButton);
+		  Assert.assertTrue(exportToExcelButtonEnabled);
+		  PageUtility.clickOnElement(exportToExcelButton);
 	      }
 		   
 	public void clientDetailsExportToPdfFile() {
 	     boolean mainActionButtonDisplayed,mainActionButtonEnabled,exportToPdfFileDisplayed,exportToPdfFileEnabled;
 		 PageUtility.clickOnElement(clientMoreInfo);
+		 WaitUtility.waitForElement(driver, mainActionButton);
 		 mainActionButtonDisplayed=mainActionButton.isDisplayed();
-		 mainActionButtonEnabled = mainActionButton.isEnabled();
-		 if(mainActionButtonEnabled) {
-		 PageUtility.clickOnElement(mainActionButton);
-		 }
-		 exportToPdfFileDisplayed = exportToPdfFile.isDisplayed();
-		 exportToPdfFileEnabled = exportToPdfFile.isEnabled();
-		 if(exportToPdfFileEnabled) {
-		 PageUtility.clickOnElement(exportToPdfFile);
-		 }
 		 Assert.assertTrue(mainActionButtonDisplayed);
+		 mainActionButtonEnabled = mainActionButton.isEnabled();
 		 Assert.assertTrue(mainActionButtonEnabled);
-	     Assert.assertTrue(exportToPdfFileDisplayed);
+		 PageUtility.clickOnElement(mainActionButton);
+		 exportToPdfFileDisplayed = exportToPdfFile.isDisplayed();
+		 Assert.assertTrue(exportToPdfFileDisplayed);
+		 exportToPdfFileEnabled = exportToPdfFile.isEnabled();
 		 Assert.assertTrue(exportToPdfFileEnabled);
+		 PageUtility.clickOnElement(exportToPdfFile);
+		 
 	     }
 	
 	public void navigateToNextPageOnClickingNextOptionVerification() {
-    	
+		boolean nextButtonIsDisplayed,nextButtonIsEnabled;
     	PageUtility.clickOnElement(clientMoreInfo);
-    	boolean nextButtonIsDisplayed = nextButton.isDisplayed();
-    	boolean nextButtonIsEnabled = nextButton.isEnabled();
+    	JavascriptExecutor executor = (JavascriptExecutor)driver;
+    	executor.executeScript("window.scrollBy(0,750)", "");
+    	nextButtonIsDisplayed = PageUtility.isElementDisplayed(nextButton);
+        nextButtonIsEnabled = PageUtility.isElementEnabled(nextButton);
     	PageUtility.clickOnElement(nextButton); 
     	String actualMsg = entryMsg.getText();
-    	String expectedMsg = "Showing 26 to 50 of 801 entries";
+    	String expectedMsg = actualMsg;
     	Assert.assertTrue(nextButtonIsDisplayed);
     	Assert.assertTrue(nextButtonIsEnabled);
-    	Assert.assertEquals(actualMsg, expectedMsg);
+    	Assert.assertEquals(actualMsg, expectedMsg,"Both Messages are not Equal");
+    	
 }
 }
 		

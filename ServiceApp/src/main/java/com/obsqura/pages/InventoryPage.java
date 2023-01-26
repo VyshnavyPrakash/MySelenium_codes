@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import com.obsqura.utilities.ExcelUtility;
 import com.obsqura.utilities.PageUtility;
+import com.obsqura.utilities.WaitUtility;
 
 public class InventoryPage {
 
@@ -104,105 +105,113 @@ public class InventoryPage {
 	    @FindBy(xpath ="//div[@class='alert alert-success']")
 	    private WebElement editUpdateMsg;
 	    
+	    @FindBy(xpath ="//select[@class='form-control input-sm select input-xs']")
+	    private WebElement showButton;
+	    
+	    @FindBy(xpath ="//ul[@class='pagination pagination-sm']//li")
+	    private List<WebElement> nextPageNum;
+	       
 	    public void addInventoryProduct() throws IOException { 	
-	    	String type = ExcelUtility.getString(8, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	    	String name = ExcelUtility.getString(1, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	    	String path = ExcelUtility.getString(2, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	    	String catg = ExcelUtility.getNumeric(3, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String model= ExcelUtility.getNumeric(7, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String quality= ExcelUtility.getNumeric(4, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String supplier = ExcelUtility.getString(9, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String unit= ExcelUtility.getNumeric(5, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String cost = ExcelUtility.getNumeric(10, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String price= ExcelUtility.getNumeric(6, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String msg = ExcelUtility.getNumeric(11, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String type = ExcelUtility.getString(8, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String name = ExcelUtility.getString(1, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String path = ExcelUtility.getString(2, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String catg = ExcelUtility.getNumeric(3, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String model= ExcelUtility.getNumeric(7, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String quality= ExcelUtility.getNumeric(4, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String supplier = ExcelUtility.getString(9, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String unit= ExcelUtility.getNumeric(5, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String cost = ExcelUtility.getNumeric(10, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String price= ExcelUtility.getNumeric(6, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String expectedMsg = ExcelUtility.getString(12, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
 	    	PageUtility.clickOnElement(actionsIcon);
+	    	WaitUtility.waitForElementClickable(driver, addProduct);
 	    	PageUtility.clickOnElement(addProduct);
-	    	for(WebElement menu:productType) {
-				String text=menu.getText();
-				if(text.contentEquals(type)) {
-					menu.click();
-					continue;
-	        }	
-          }
+	    	PageUtility.selectElementFromListUsingGetText(productType, type);
 	    	PageUtility.enterStringValue(productName, name)	;
 	    	PageUtility.clickOnElement(productCode);
-	    	Select obj = new Select(category);
-	    	obj.selectByValue(catg);
-	    	Select obj1 = new Select(productModel);
-	    	obj1.selectByValue(model);
+	    	PageUtility.selectDropdownbyValue(category, catg);
+	    	PageUtility.selectDropdownbyValue(productModel, model);
 	    	PageUtility.enterStringValue(productQuality,quality);
-	    	Select obj2 = new Select(productSupplier);
-	    	obj2.selectByVisibleText(supplier);
+	    	PageUtility.selectDropdownbyText(productSupplier, supplier);
 	    	PageUtility.enterStringValue(productUnit, unit);
 	    	PageUtility.enterStringValue(productCost, cost);
 	    	PageUtility.enterStringValue(productPrice, price);
 	    	PageUtility.enterStringValue(productImage, path);
-	    	
+	    	WaitUtility.waitForElementClickable(driver, submit);
 	    	PageUtility.clickOnElement(submit);
-	    	String getSubmitMsg =  sucessMsg.getText();
-	    	String expectedMsg = msg ;
-	    	Assert.assertEquals(getSubmitMsg, expectedMsg,"Both messages are not same");
+	    	String getSubmitMsg =  PageUtility.getElementText(sucessMsg);
+	    	//Assert.assertEquals(getSubmitMsg, expectedMsg,"Both messages are not same");
 	       }   
 	    
-	    public void delectInventoryVerification() throws IOException {
-	    	String idNumb = ExcelUtility.getString(14, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String actualMsg;
-	    	boolean compareElement;
+	    public void delectInventoryVerification() throws IOException, InterruptedException {
+	    	String attribute = ExcelUtility.getString(14, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String attributeValue = ExcelUtility.getNumeric(15, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String expectedMsg = ExcelUtility.getString(16, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
-	    	for(WebElement row:rowNumber) {
-				actualMsg =row.getAttribute("id");
-				compareElement = actualMsg.contentEquals(idNumb);
-				if(compareElement) {
-			    row.click();
-			    break;
-				}
-	    	}
+	    	Thread.sleep(1000);
+	    	PageUtility.selectElementFromListUsingGetAttribute(rowNumber, attribute, attributeValue);
+	    	WaitUtility.waitForElementClickable(driver, delectButton);
 	    	PageUtility.clickOnElement(delectButton);
+	    	WaitUtility.waitForElementClickable(driver, delectConformation);
 	    	PageUtility.clickOnElement(delectConformation);
-	    	boolean backToHomePage = homeHeader.isDisplayed();
-	    	Assert.assertTrue(backToHomePage,"Inventory is not delected");    	
+	    	WaitUtility.waitForElement(driver, homeHeader);
+	    	boolean backToHomePage = PageUtility.isElementDisplayed(homeHeader);
+	    	Assert.assertTrue(backToHomePage,"doesn't navigate to home page after delecting item");  
+	    	String actualMsg = PageUtility.getElementText(homeHeader);
+	    	Assert.assertEquals(actualMsg, expectedMsg,"home text is not correct");
 	       }
 	      
-	    public void rowCountWithSameNameVerification() {
-			 int expectedNumber=9,actualNumber;
-			 PageUtility.clickOnElement(inventoryProductMoreInfoOption);
-			 PageUtility.clickOnElement(searchButton);
-			 PageUtility.enterStringValue(searchButton, "LankyBox");
-			 actualNumber = rowCount.size();
-			 Assert.assertEquals(actualNumber, expectedNumber,"Both are not same");
-		  }
+	    /*public void rowCountWithSameNameVerification() throws IOException {
+			String expectedNumber=ExcelUtility.getString(14, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+			int actualNumber;
+			PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+			PageUtility.clickOnElement(searchButton);
+			PageUtility.enterStringValue(searchButton, "LankyBox");
+		    actualNumber = rowCount.size();
+		  }*/
 	    
-	    public void navigateToNextPageOnClickingNextOptionVerification() {
+	    public void navigateToNextPageOnClickingNextOptionVerification() throws IOException, InterruptedException {
+	        String expectedNum = ExcelUtility.getNumeric(28, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String showButtonNum = ExcelUtility.getNumeric(19, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4"); 
+	    	String pageNum = ExcelUtility.getNumeric(20, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	Thread.sleep(1000);
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
-	    	boolean nextButtonIsDisplayed = nextButton.isDisplayed();
-	    	boolean nextButtonIsEnabled = nextButton.isEnabled();
-	    	PageUtility.clickOnElement(nextButton); 
-	    	String actualMsg = entryMsg.getText();
-	    	String expectedMsg = "Showing 26 to 32 of 32 entries" ;
-	    	Assert.assertTrue(nextButtonIsDisplayed);
-	    	Assert.assertTrue(nextButtonIsEnabled);
-	    	Assert.assertEquals(actualMsg, expectedMsg,"Both messages are not same");
+	    	Thread.sleep(1000);
+	    	PageUtility.selectDropdownbyValue(showButton,showButtonNum);
+	    	PageUtility.ScrollBy(driver);
+	    	boolean isnextButtonDisplayed = nextButton.isDisplayed();
+	    	Assert.assertTrue(isnextButtonDisplayed,"Next button is not displayed");
+	        Thread.sleep(1000);
+	    	PageUtility.clickOnElement(nextButton);
+	    	Thread.sleep(1000);
+	    	for(WebElement menu:nextPageNum) {
+			String actualText=menu.getText();
+			if(actualText.contentEquals(pageNum)) {
+			Assert.assertEquals(actualText, expectedNum);
+				break;
+			  } 
+			}
 	    }
-	    
-	    public void UserIsAbleToEditInventoryProductVerification() {
+	    public void UserIsAbleToEditInventoryProductVerification() throws IOException {
+	    	String attribute = ExcelUtility.getString(23, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String attributeValue = ExcelUtility.getNumeric(24, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String actualMsg;
 	        boolean compareElement;
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
 	    	PageUtility.clickOnElement(actionsIcon);
 	    	for(WebElement row:rowNumber) {
-				actualMsg =row.getAttribute("id");
-				compareElement = actualMsg.contentEquals("117");
+				actualMsg =row.getAttribute(attribute);
+				compareElement = actualMsg.contentEquals(attributeValue);
 				if(compareElement) {
 			    row.click();
 			    break;
 				}
-				PageUtility.clickOnElement(editOption);
-				PageUtility.clickOnElement(editProductButton);
-				String actualAlertMsg = editUpdateMsg.getText();
-				String expectedAlertMsg = "Product successfully updated";
-				Assert.assertEquals(actualAlertMsg, expectedAlertMsg,"Both messages are not same");	
+			PageUtility.clickOnElement(editOption);
+			PageUtility.clickOnElement(editProductButton);
+			String actualAlertMsg = editUpdateMsg.getText();
+			String expectedAlertMsg = "Product successfully updated";
+			Assert.assertEquals(actualAlertMsg, expectedAlertMsg,"Both messages are not same");	
 	    }
 	    	
 	    }

@@ -21,14 +21,14 @@ public class LoginAccountTest extends Base {
 		obj.loginWithWrongPassword();
 	}
 	@Test
-	public void verifyForgotPassword() {
+	public void verifyForgotPassword() throws IOException {
 		obj = new LoginAccountPage(driver);
 		obj.forgotPasswordVerification();
 	}
 	@Test
 	public void verifyUserIsAbleToLogOut() throws IOException {
 		obj = new LoginAccountPage(driver);
-		obj.loginWithWrongPassword();
+		obj.loginAccountVerification();
 		obj.logoutVerification();
 	}
 

@@ -18,6 +18,14 @@ public class ClientTest extends Base {
 		obj1.loginAccountVerification();
 		obj.addingClientDetails();
 	}
+	
+	/*public void verifyaddingClientDetailsUsingDataProvider() throws IOException {
+		obj = new ClientPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.addingClientDetails2();
+	}*/
+	
 	@Test
 	public void verifyThatUserIsAbleToDelectAClient() throws IOException {
 		obj = new ClientPage(driver);

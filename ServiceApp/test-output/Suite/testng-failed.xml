@@ -7,13 +7,13 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.obsqura.testscripts.InventoryTest">
+      <class name="com.obsqura.testscripts.ReparationTest">
         <methods>
           <include name="InitializeBrowser"/>
-          <include name="verifyUserIsAbleToNavigateToNextPageOnClickingNextOption"/>
+          <include name="verifyCorrectNumberOfRowsAreShownOnSelectingShowButton"/>
           <include name="browserQuit"/>
         </methods>
-      </class> <!-- com.obsqura.testscripts.InventoryTest -->
+      </class> <!-- com.obsqura.testscripts.ReparationTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

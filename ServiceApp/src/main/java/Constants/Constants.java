@@ -7,6 +7,5 @@ public class Constants {
 	public static String TESTDATAFILE="\\src\\main\\java\\resources\\Testdata.properties";
 	public static String chrome="\\src\\main\\java\\Resources\\chromedriver.exe";
 	public static String edge ="\\src\\main\\java\\Resources\\msedgedriver.exe";
-
-
+	public static String firefox ="\\src\\main\\java\\Resources\\geckodriver.exe";
 }
