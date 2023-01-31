@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>28/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 26 19:06:10 IST 2023</td>
+<td>Started on:</td><td>Tue Jan 31 01:43:04 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16842 ms)</td>
+<tr><td>Total time:</td><td>319 seconds (319891 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,58 +75,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.obsqura.testscripts.ReparationTest.verifyCorrectNumberOfRowsAreShownOnSelectingShowButton()'><b>verifyCorrectNumberOfRowsAreShownOnSelectingShowButton</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;LAPTOP-CESQ05LJ&apos;, ip: &apos;192.168.1.71&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9c0bd83532826648842b295435ad6701, clickElement {id=4b95be4a-421f-4fc5-8e2b-75adfc2d5449}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:57154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57154/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on WINDOWS (9c0bd83532826648842b295435ad6701)] -&gt; xpath: //select[@class=&apos;form-control input-sm select input-xs&apos; and @name =&apos;dynamic-table_length&apos;]]] -&gt; xpath: .//option[@value = &quot;10&quot;]]
-Session ID: 9c0bd83532826648842b295435ad6701
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:315)
-	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:191)
-	at com.obsqura.pages.ReparationPage.rowNumberInShowButtonVerification(ReparationPage.java:66)
-	at com.obsqura.testscripts.ReparationTest.verifyCorrectNumberOfRowsAreShownOnSelectingShowButton(ReparationTest.java:19)
+<td title='com.obsqura.testscripts.ReparationTest.verifycolumnVisibility()'><b>verifycolumnVisibility</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td><div><pre>java.lang.AssertionError: Column count is not as expected expected [15] but found [16]
+	at com.obsqura.pages.ReparationPage.columnVisibilityVerification(ReparationPage.java:98)
+	at com.obsqura.testscripts.ReparationTest.verifycolumnVisibility(ReparationTest.java:33)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace525275084", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace525275084'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: Element is not currently visible and may not be manipulated
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;LAPTOP-CESQ05LJ&apos;, ip: &apos;192.168.1.71&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9c0bd83532826648842b295435ad6701, clickElement {id=4b95be4a-421f-4fc5-8e2b-75adfc2d5449}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:57154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57154/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on WINDOWS (9c0bd83532826648842b295435ad6701)] -&gt; xpath: //select[@class=&apos;form-control input-sm select input-xs&apos; and @name =&apos;dynamic-table_length&apos;]]] -&gt; xpath: .//option[@value = &quot;10&quot;]]
-Session ID: 9c0bd83532826648842b295435ad6701
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:315)
-	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:191)
-	at com.obsqura.pages.ReparationPage.rowNumberInShowButtonVerification(ReparationPage.java:66)
-	at com.obsqura.testscripts.ReparationTest.verifyCorrectNumberOfRowsAreShownOnSelectingShowButton(ReparationTest.java:19)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2099630350", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2099630350'><pre>java.lang.AssertionError: Column count is not as expected expected [15] but found [16]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at com.obsqura.pages.ReparationPage.columnVisibilityVerification(ReparationPage.java:98)
+	at com.obsqura.testscripts.ReparationTest.verifycolumnVisibility(ReparationTest.java:33)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,8 +118,202 @@ Session ID: 9c0bd83532826648842b295435ad6701
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>9</td>
-<td>com.obsqura.testscripts.ReparationTest@59a008ba</td></tr>
+<td>7</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ReparationTest.verifycolumnNumber()'><b>verifycolumnNumber</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td><div><pre>java.lang.AssertionError: both the column count are same expected [15] but found [14]
+	at com.obsqura.pages.ReparationPage.columnNumberVerification(ReparationPage.java:136)
+	at com.obsqura.testscripts.ReparationTest.verifycolumnNumber(ReparationTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace987706992", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace987706992'><pre>java.lang.AssertionError: both the column count are same expected [15] but found [14]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at com.obsqura.pages.ReparationPage.columnNumberVerification(ReparationPage.java:136)
+	at com.obsqura.testscripts.ReparationTest.verifycolumnNumber(ReparationTest.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>8</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.obsqura.testscripts.InventoryTest.verifyAddInventoryProduct()'><b>verifyAddInventoryProduct</b><br>Test class: com.obsqura.testscripts.InventoryTest</td>
+<td></td>
+<td>8</td>
+<td>com.obsqura.testscripts.InventoryTest@1c33c17b</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyThatUserIsAbleToNavigateToQualityAlertPage()'><b>verifyThatUserIsAbleToNavigateToQualityAlertPage</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>5</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ClientTest.verifyingShowButtonGivesCorrectNumberOfRows()'><b>verifyingShowButtonGivesCorrectNumberOfRows</b><br>Test class: com.obsqura.testscripts.ClientTest</td>
+<td></td>
+<td>8</td>
+<td>com.obsqura.testscripts.ClientTest@13ad5cd3</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ReparationTest.verifyRowCountWithSameName()'><b>verifyRowCountWithSameName</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td></td>
+<td>8</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyUserIsAbleTNavigateToInventoryPage()'><b>verifyUserIsAbleTNavigateToInventoryPage</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyQuickEmailFieldWithoutMsg()'><b>verifyQuickEmailFieldWithoutMsg</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyQuickEmailFieldWithoutEmail()'><b>verifyQuickEmailFieldWithoutEmail</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ReparationTest.verifyTotalCompletedRepairRows()'><b>verifyTotalCompletedRepairRows</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td></td>
+<td>8</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginAccountTest.verifyForgotPassword()'><b>verifyForgotPassword</b><br>Test class: com.obsqura.testscripts.LoginAccountTest</td>
+<td></td>
+<td>1</td>
+<td>com.obsqura.testscripts.LoginAccountTest@26ceffa8</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginAccountTest.verifyLoginWithWrongPassword()'><b>verifyLoginWithWrongPassword</b><br>Test class: com.obsqura.testscripts.LoginAccountTest</td>
+<td></td>
+<td>1</td>
+<td>com.obsqura.testscripts.LoginAccountTest@26ceffa8</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.InventoryTest.verifyUserIsAbleToNavigateToNextPageOnClickingNextOption()'><b>verifyUserIsAbleToNavigateToNextPageOnClickingNextOption</b><br>Test class: com.obsqura.testscripts.InventoryTest</td>
+<td></td>
+<td>8</td>
+<td>com.obsqura.testscripts.InventoryTest@1c33c17b</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.InventoryTest.verifyExportFileWithoutSelectingProduct()'><b>verifyExportFileWithoutSelectingProduct</b><br>Test class: com.obsqura.testscripts.InventoryTest</td>
+<td></td>
+<td>5</td>
+<td>com.obsqura.testscripts.InventoryTest@1c33c17b</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ReparationTest.verifyCorrectNumberOfRowsAreShownOnSelectingShowButton()'><b>verifyCorrectNumberOfRowsAreShownOnSelectingShowButton</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td></td>
+<td>7</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginAccountTest.verifyBackToLogin()'><b>verifyBackToLogin</b><br>Test class: com.obsqura.testscripts.LoginAccountTest</td>
+<td></td>
+<td>0</td>
+<td>com.obsqura.testscripts.LoginAccountTest@26ceffa8</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ClientTest.verifyThatUserIsAbleToAddClient()'><b>verifyThatUserIsAbleToAddClient</b><br>Test class: com.obsqura.testscripts.ClientTest</td>
+<td></td>
+<td>8</td>
+<td>com.obsqura.testscripts.ClientTest@13ad5cd3</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ClientTest.vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification()'><b>vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification</b><br>Test class: com.obsqura.testscripts.ClientTest</td>
+<td></td>
+<td>6</td>
+<td>com.obsqura.testscripts.ClientTest@13ad5cd3</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyUserIsAbleTNavigateToReparationPage()'><b>verifyUserIsAbleTNavigateToReparationPage</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>6</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ClientTest.verifyUserIsableToAddClientDetailsWithoutClientName()'><b>verifyUserIsableToAddClientDetailsWithoutClientName</b><br>Test class: com.obsqura.testscripts.ClientTest</td>
+<td></td>
+<td>7</td>
+<td>com.obsqura.testscripts.ClientTest@13ad5cd3</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.InventoryTest.verifyrowCountWithSameName()'><b>verifyrowCountWithSameName</b><br>Test class: com.obsqura.testscripts.InventoryTest</td>
+<td></td>
+<td>6</td>
+<td>com.obsqura.testscripts.InventoryTest@1c33c17b</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyUserIsAbleTNavigateToClientPage()'><b>verifyUserIsAbleTNavigateToClientPage</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>6</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.InventoryTest.verifyuserIsAbleToEditInventoryProduct()'><b>verifyuserIsAbleToEditInventoryProduct</b><br>Test class: com.obsqura.testscripts.InventoryTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.InventoryTest@1c33c17b</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ReparationTest.rowNumberInShowButtonVerificationForPendingRepairs()'><b>rowNumberInShowButtonVerificationForPendingRepairs</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td></td>
+<td>7</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyQuickSMSFieldWithoutMsg()'><b>verifyQuickSMSFieldWithoutMsg</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginAccountTest.verifyUserIsAbleToLogOut()'><b>verifyUserIsAbleToLogOut</b><br>Test class: com.obsqura.testscripts.LoginAccountTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.LoginAccountTest@26ceffa8</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginAccountTest.verifyUserIsAbleToLogin()'><b>verifyUserIsAbleToLogin</b><br>Test class: com.obsqura.testscripts.LoginAccountTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.LoginAccountTest@26ceffa8</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.HomeTest.verifyQuickEmailFieldWithoutSubject()'><b>verifyQuickEmailFieldWithoutSubject</b><br>Test class: com.obsqura.testscripts.HomeTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.HomeTest@1e097d59</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginAccountTest.verifyLoginWithWrongUsername()'><b>verifyLoginWithWrongUsername</b><br>Test class: com.obsqura.testscripts.LoginAccountTest</td>
+<td></td>
+<td>1</td>
+<td>com.obsqura.testscripts.LoginAccountTest@26ceffa8</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ReparationTest.verifyThatauserIsAbleTodownloadReparationExcelSheet()'><b>verifyThatauserIsAbleTodownloadReparationExcelSheet</b><br>Test class: com.obsqura.testscripts.ReparationTest</td>
+<td></td>
+<td>7</td>
+<td>com.obsqura.testscripts.ReparationTest@5bf0fe62</td></tr>
 </table><p>
 </body>
 </html>

@@ -9,11 +9,14 @@
   <parameter name="browser" value="Chrome"/> 
 
  <classes>
- <class name="com.obsqura.testscripts.ReparationTest">
-  <methods>
-    <include name="verifyCorrectNumberOfRowsAreShownOnSelectingShowButton"></include>
-    </methods>
-    </class>
+ <class name="com.obsqura.testscripts.LoginAccountTest"></class>
+ <class name="com.obsqura.testscripts.ClientTest"></class>
+ <class name="com.obsqura.testscripts.InventoryTest"></class>
+ <class name="com.obsqura.testscripts.ReparationTest"></class>
+ <class name="com.obsqura.testscripts.HomeTest"></class>
+ 
+ 
+ 
  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

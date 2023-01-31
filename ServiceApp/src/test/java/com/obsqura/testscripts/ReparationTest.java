@@ -12,7 +12,7 @@ public class ReparationTest extends Base {
 	ReparationPage obj;
 	LoginAccountPage obj1;
 	@Test
-	public void verifyCorrectNumberOfRowsAreShownOnSelectingShowButton() throws IOException {
+	public void verifyCorrectNumberOfRowsAreShownOnSelectingShowButton() throws IOException, InterruptedException {
 		obj = new ReparationPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
@@ -26,24 +26,40 @@ public class ReparationTest extends Base {
 		obj.downloadingReparationExcelSheet();
 	}
 	@Test
-	public void verifycolumnVisibility() throws IOException {
+	public void verifycolumnVisibility() throws IOException, InterruptedException {
 		obj = new ReparationPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.columnVisibilityVerification();
 	}
 	@Test
-	public void verifyRowCountWithSameName() throws IOException {
+	public void verifyRowCountWithSameName() throws IOException, InterruptedException {
 		obj = new ReparationPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.rowCountWithSameNameVerification();
 	}
 	@Test
-	public void verifyTotalCompletedRepairRows() throws IOException {
+	public void verifyTotalCompletedRepairRows() throws IOException, InterruptedException {
 		obj = new ReparationPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.totalCompletedRepairRows();
 	}
+	@Test
+	public void verifycolumnNumber() throws IOException, InterruptedException {
+		obj = new ReparationPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.columnNumberVerification();
+	}
+	@Test
+	public void rowNumberInShowButtonVerificationForPendingRepairs() throws IOException, InterruptedException {
+		obj = new ReparationPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.rowNumberInShowButtonVerificationForPendingRepairs();
+	}
+	
+	
 }

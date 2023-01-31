@@ -21,7 +21,7 @@ public class HomePage {
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-	}
+	  }
 	    @FindBy(xpath="//input[@id='phone_number']")
 	    private WebElement number;
 	 
@@ -29,7 +29,7 @@ public class HomePage {
 	    private WebElement sms;
 	 
 	    @FindBy(xpath="//button[@class='pull-right btn btn-default' and @form='send_quicksms']")
-	    private WebElement sentButton;
+	    private WebElement sentButtonSMS;
 	   
 	    @FindBy(xpath="//input[@id='emailto_']")
 	    private WebElement emailFileld;
@@ -38,7 +38,7 @@ public class HomePage {
 	    private WebElement subjectFileld;
 	   
 	    @FindBy(xpath="//textarea[@id='body_']")
-	    private WebElement msgFileld;
+	    private WebElement msgFileldQuickEmail;
 	   
 	    @FindBy(xpath="//button[@form='send_email_form']")
 	    private WebElement emailSentButton;
@@ -56,81 +56,129 @@ public class HomePage {
 	    private List<WebElement> rowList;
 	    
 	    @FindBy(xpath="//input[@id='emailto_']")
-		private WebElement EmailIdField ;
+		private WebElement EmailIdField;
 		
 		@FindBy(xpath="//input[@id='subject_']")
-		private WebElement subjectField ;
+		private WebElement subjectField;
 		
 		@FindBy(xpath="(//button[@class='pull-right btn btn-default'])[1]")
-		private WebElement sendButton ;
+		private WebElement sendButton;
 		
 		@FindBy(xpath="//ul[@id='parsley-id-9']")
-		private WebElement MsgField ;
+		private WebElement MsgField;
 		
 		@FindBy(xpath="//button[@class='fc-agendaWeek-button fc-button fc-state-default']")
-		private WebElement weekButton ;
+		private WebElement weekButton;
 		
 		@FindBy(xpath="//button[@class='fc-agendaDay-button fc-button fc-state-default fc-corner-right']")
-		private WebElement dayButton ;
+		private WebElement dayButton;
 		
 		@FindBy(xpath="//button[@class='fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled']")
-		private WebElement todayButton ;
-	        
-	
+		private WebElement todayButton;
+		
+		@FindBy(xpath="//a[@ href='https://qalegend.com/mobile_service/panel/inventory']")
+	    private WebElement inventoryProductMoreInfoOption;
+	    
+		@FindBy(xpath="//a[@href='https://qalegend.com/mobile_service/panel/reparation'] ")
+		private WebElement reperationMoreInfoIcon;
+		
+		@FindBy(xpath="//a[@href='https://qalegend.com/mobile_service/panel/customers']")
+		private WebElement clientMoreInfo;
+		
+		@FindBy(xpath="//li[text()='This value is required.']")
+		private WebElement notSentalert;
+		
+		@FindBy(xpath="//li[@class='parsley-required']")
+		private WebElement alertMsgSMS;
+		
+		
+		  
 	 public void quickemailFieldWithoutMsg() throws IOException {
 		 PageUtility.ScrollBy(driver);
-		 String Email_Id =ExcelUtility.getString(6, 2, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet1");
-		 String sms= ExcelUtility.getString(7, 2, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet1");
-		 String expectedMsg= ExcelUtility.getString(0, 2, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet1");
-		 String actualMsg = null;
+		 String actualMsg;
+		 String Email_Id =FakerUtility.fakeValuesServiceEmail();
+		 String sub= ExcelUtility.getString(7, 3, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
+		 String expectedMsg= ExcelUtility.getString(9, 3, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
 		 PageUtility.enterText(EmailIdField, Email_Id);
-		 PageUtility.enterText(subjectField, sms);
+		 PageUtility.enterStringValue(subjectFileld, sub);
 		 PageUtility.clickOnElement(sendButton);
-		 actualMsg=PageUtility.getElementText(MsgField);
-		 Assert.assertEquals(expectedMsg,actualMsg,"Message not send");
+		 actualMsg=PageUtility.getElementText(notSentalert);
+		 Assert.assertEquals(expectedMsg,actualMsg,"No alert message obtained");
 		 }
 	 
 	 public void quickemailFieldWithoutSubject() throws IOException {
 		 PageUtility.ScrollBy(driver);
-		 String Email_Id =ExcelUtility.getString(6, 2, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");
-		 String sub= ExcelUtility.getString(7, 2, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
-		 String expectedMsg= ExcelUtility.getString(9, 2, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
-		 String actualMsg = null;
+		 String actualMsg;
+		 String Email_Id =FakerUtility.fakeValuesServiceEmail();
+		 String msg= FakerUtility.cityName();
+		 String expectedMsg= ExcelUtility.getString(9, 3, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
 		 PageUtility.enterText(EmailIdField, Email_Id);
-	     PageUtility.enterStringValue(subjectFileld, sub);
+		 PageUtility.enterStringValue(msgFileldQuickEmail, msg);
 		 PageUtility.clickOnElement(sendButton);
-		 actualMsg=MsgField.getText();
+		 actualMsg=PageUtility.getElementText(notSentalert);
+		 Assert.assertEquals(expectedMsg,actualMsg,"not alert message obtained");
+	     } 
+	 
+	 public void quickemailFieldWithoutEmail() throws IOException {
+		 PageUtility.ScrollBy(driver);
+		 String msg =ExcelUtility.getString(8, 3, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");
+		 String sub= ExcelUtility.getString(7, 3, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
+		 String expectedMsg= ExcelUtility.getString(9, 3, System.getProperty("user.dir") + Constants.Constants.EXCELFILE,"Sheet2");
+		 String actualMsg = null;
+	     PageUtility.enterStringValue(subjectFileld, sub);
+	     PageUtility.enterStringValue(msgFileldQuickEmail, msg);
+		 PageUtility.clickOnElement(sendButton);
+		 actualMsg=PageUtility.getElementText(notSentalert);
 		 Assert.assertEquals(expectedMsg,actualMsg,"Message not send");
 	     } 
 	 
-	 public void navigateToQualityAlertVerification() throws IOException {
-		 String actualMsg=null, expectedMsg = ExcelUtility.getString(11, 2, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");;	 
-		 boolean qualityAlertIconDisplayed = qualityAlertIcon.isDisplayed();
-		 Assert.assertTrue(qualityAlertIconDisplayed);
-		 boolean qualityAlertIconEnabled = qualityAlertIcon.isEnabled();
-		 Assert.assertTrue(qualityAlertIconEnabled);
+	 public void navigateToQualityAlertVerification() throws IOException, InterruptedException {
+		 String actualMsg, expectedMsg = ExcelUtility.getString(11, 3, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");;	 
+		 WaitUtility.waitForElementClickable(driver, qualityAlertIcon);
 		 PageUtility.clickOnElement(qualityAlertIcon);
 		 boolean qualityAlertNavigationaIconisEnabled = qualityAlertNavigationaIcon.isEnabled();
 		 Assert.assertTrue(qualityAlertNavigationaIconisEnabled);
+		 WaitUtility.waitForElementClickable(driver, qualityAlertNavigationaIcon);
 		 PageUtility.clickOnElement(qualityAlertNavigationaIcon);
+		 Thread.sleep(1000);
 		 for(WebElement row:rowList) {
 		 actualMsg =row.getText();
 		 boolean compareElement = actualMsg.contentEquals(expectedMsg);
-		  Assert.assertTrue(compareElement,"actual and expected message contents are not same");			
-		  Assert.assertEquals(actualMsg, expectedMsg,"content not equals");	
-		  }	 
-	     }
+		 Assert.assertTrue(compareElement,"actual and expected message contents are not same");			
+		 Assert.assertEquals(actualMsg, expectedMsg,"content not equals");
+		 break;
+		 }	 
+	    }
 	 
-	 public void calenderViewVerification() {
-		  boolean isweekButtonIsDisplayed= weekButton.isDisplayed();
-		  Assert.assertTrue(isweekButtonIsDisplayed,"weekButton not displayed");
-		  PageUtility.clickOnElement(weekButton);
-		  boolean isdayButtonDisplayed = dayButton.isDisplayed();
-		  Assert.assertTrue(isdayButtonDisplayed,"button not displayed");
-		  boolean dayButtonEnabled = dayButton.isEnabled();
-		  Assert.assertTrue(dayButtonEnabled,"button not enabled");
-		  PageUtility.clickOnElement(dayButton);
-	      
-		  
-        }
-      }
+	 public void navigateToInventoryPageVerification() throws IOException {
+		 String expectedPage = ExcelUtility.getString(14, 3, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");
+		 PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+		 String actualPage = driver.getCurrentUrl();
+		 Assert.assertEquals(expectedPage, actualPage,"Navigation didn't occur");
+	    }
+	 
+	 public void clientPageVerification() throws IOException {
+		 String expectedPage = ExcelUtility.getString(15, 3, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");
+		 PageUtility.clickOnElement(clientMoreInfo);
+		 String actualPage = driver.getCurrentUrl();
+		 Assert.assertEquals(expectedPage, actualPage,"Navigation didn't occur");
+	    }
+	 
+	 public void reparationPageVerification() throws IOException {
+		 String expectedPage = ExcelUtility.getString(16, 3, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");
+		 PageUtility.clickOnElement(reperationMoreInfoIcon);
+		 String actualPage = driver.getCurrentUrl();
+		 Assert.assertEquals(expectedPage, actualPage,"Navigation didn't occur");
+	    }
+       
+
+     public void quickSMSFieldWithoutMsg() throws IOException {
+    	 String numb = FakerUtility.cellPhone();
+    	 String expectedMsg = ExcelUtility.getString(20, 3, System.getProperty("user.dir") +Constants.Constants.EXCELFILE,"Sheet2");
+    	 PageUtility.enterStringValue(number, numb);
+    	 PageUtility.clickOnElement(sentButtonSMS);
+    	 String actualAlertMsg = PageUtility.getElementText(alertMsgSMS);
+    	 Assert.assertEquals(actualAlertMsg, expectedMsg,"alert message is not correct");
+    	 
+     }
+}

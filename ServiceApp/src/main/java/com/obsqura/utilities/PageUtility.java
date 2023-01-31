@@ -25,6 +25,10 @@ import org.openqa.selenium.JavascriptExecutor;
 	public static int getElementRowSize(List<WebElement> element) {
 	return element.size();
 	}
+	
+	public static int getElementColumnSize(List<WebElement> element) {
+	return element.size();
+	}
 
 	public static void clickAndHoldOnElement(WebElement element, WebDriver driver) {
 	Actions actions = new Actions(driver);
@@ -66,6 +70,9 @@ import org.openqa.selenium.JavascriptExecutor;
 	
 	public static Boolean isElementSelected(WebElement element) {
 	return element.isSelected();
+	}
+	public void mediumDelay(int x) throws InterruptedException {
+	  Thread.sleep(x);
 	}
 	
 	public static void ScrollBy(WebDriver driver) {

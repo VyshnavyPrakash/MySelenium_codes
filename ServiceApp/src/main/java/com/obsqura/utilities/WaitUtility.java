@@ -13,7 +13,7 @@ public class WaitUtility {
 	
 	public static final long IMPLICIT_WAIT = 20;
 	public static final long PAGE_LOAD_WAIT = 20;
-	public static final long EXPLICIT_WAIT = 20;
+	public static final long EXPLICIT_WAIT = 50;
 	
 	public static void waitForElement(WebDriver driver, WebElement target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
@@ -38,8 +38,7 @@ public class WaitUtility {
 	public static void waitForElementIsPresent(WebDriver driver, By target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.presenceOfElementLocated(target));
-    }
-	
+    }	
 	public static void waitForElementIsPresent(WebDriver driver, WebElement target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.textToBePresentInElementValue(target, null));
@@ -93,7 +92,9 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(target));
 	}
+	public void mediumDelay(int x) throws InterruptedException {
+		Thread.sleep(x);
 	
 	
-	
+}
 }

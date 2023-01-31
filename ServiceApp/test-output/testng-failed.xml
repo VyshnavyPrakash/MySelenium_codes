@@ -10,7 +10,8 @@
       <class name="com.obsqura.testscripts.ReparationTest">
         <methods>
           <include name="InitializeBrowser"/>
-          <include name="verifyCorrectNumberOfRowsAreShownOnSelectingShowButton"/>
+          <include name="verifycolumnVisibility"/>
+          <include name="verifycolumnNumber"/>
           <include name="browserQuit"/>
         </methods>
       </class> <!-- com.obsqura.testscripts.ReparationTest -->

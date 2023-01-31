@@ -18,20 +18,14 @@ public class InventoryTest extends Base{
 		obj1.loginAccountVerification();
 		obj.addInventoryProduct();
 	}
-	@Test
-	public void verifyDelectingInventory() throws IOException, InterruptedException{
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.delectInventoryVerification();
-	}
 	
-	/*public void verifyrowCountWithSameName() throws IOException {
+	@Test
+	public void verifyrowCountWithSameName() throws IOException, InterruptedException {
 		obj = new InventoryPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.rowCountWithSameNameVerification();
-	}*/
+	}
 	
 	@Test
 	public void verifyUserIsAbleToNavigateToNextPageOnClickingNextOption() throws IOException, InterruptedException {
@@ -47,5 +41,19 @@ public class InventoryTest extends Base{
 		obj1.loginAccountVerification();
 		obj.UserIsAbleToEditInventoryProductVerification();
 	}
+	@Test
+	public void verifyExportFileWithoutSelectingProduct() throws IOException {
+		obj = new InventoryPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.exportToExcelFileWithoutSelectingProduct();
+	}
+	public void verifyExportToPdfFileWithoutSelectingProduct() throws IOException {
+		obj = new InventoryPage(driver);
+		obj1 = new LoginAccountPage(driver);
+		obj1.loginAccountVerification();
+		obj.exportToPdfFileWithoutSelectingProduct();
+	}
+	
 
 }

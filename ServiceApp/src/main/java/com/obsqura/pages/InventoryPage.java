@@ -110,7 +110,16 @@ public class InventoryPage {
 	    
 	    @FindBy(xpath ="//ul[@class='pagination pagination-sm']//li")
 	    private List<WebElement> nextPageNum;
-	       
+	    
+	    @FindBy(xpath ="//a[@id='excel' and @data-action='export_excel']")
+	    private WebElement exportToExcel;
+	    
+	    @FindBy(xpath =" //div[@class='alert alert-danger']")
+	    private WebElement excelAlert;
+	    
+	    @FindBy(xpath ="//a[@id='excel']")
+	    private WebElement exportToPdfFile;
+	           
 	    public void addInventoryProduct() throws IOException { 	
 	    	String type = ExcelUtility.getString(8, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	String name = ExcelUtility.getString(1, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
@@ -122,7 +131,7 @@ public class InventoryPage {
 	        String unit= ExcelUtility.getNumeric(5, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String cost = ExcelUtility.getNumeric(10, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String price= ExcelUtility.getNumeric(6, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	        String expectedMsg = ExcelUtility.getString(12, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	        String expectedPage = ExcelUtility.getString(11, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
 	    	PageUtility.clickOnElement(actionsIcon);
 	    	WaitUtility.waitForElementClickable(driver, addProduct);
@@ -140,36 +149,24 @@ public class InventoryPage {
 	    	PageUtility.enterStringValue(productImage, path);
 	    	WaitUtility.waitForElementClickable(driver, submit);
 	    	PageUtility.clickOnElement(submit);
-	    	String getSubmitMsg =  PageUtility.getElementText(sucessMsg);
-	    	//Assert.assertEquals(getSubmitMsg, expectedMsg,"Both messages are not same");
+	    	String actualPage = driver.getCurrentUrl();
+	    	Assert.assertEquals(actualPage, expectedPage,"Client details are not submitted");
 	       }   
 	    
-	    public void delectInventoryVerification() throws IOException, InterruptedException {
-	    	String attribute = ExcelUtility.getString(14, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	    	String attributeValue = ExcelUtility.getNumeric(15, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	    	String expectedMsg = ExcelUtility.getString(16, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
-	    	Thread.sleep(1000);
-	    	PageUtility.selectElementFromListUsingGetAttribute(rowNumber, attribute, attributeValue);
-	    	WaitUtility.waitForElementClickable(driver, delectButton);
-	    	PageUtility.clickOnElement(delectButton);
-	    	WaitUtility.waitForElementClickable(driver, delectConformation);
-	    	PageUtility.clickOnElement(delectConformation);
-	    	WaitUtility.waitForElement(driver, homeHeader);
-	    	boolean backToHomePage = PageUtility.isElementDisplayed(homeHeader);
-	    	Assert.assertTrue(backToHomePage,"doesn't navigate to home page after delecting item");  
-	    	String actualMsg = PageUtility.getElementText(homeHeader);
-	    	Assert.assertEquals(actualMsg, expectedMsg,"home text is not correct");
-	       }
-	      
-	    /*public void rowCountWithSameNameVerification() throws IOException {
-			String expectedNumber=ExcelUtility.getString(14, 2, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
-			int actualNumber;
+	   
+	        public void rowCountWithSameNameVerification() throws IOException, InterruptedException {
+			String expectedNumber=ExcelUtility.getNumeric(26, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+			String searchName=ExcelUtility.getString(27, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+			WaitUtility.waitForElementClickable(driver, inventoryProductMoreInfoOption);
 			PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+			WaitUtility.waitForElementClickable(driver, searchButton);
 			PageUtility.clickOnElement(searchButton);
-			PageUtility.enterStringValue(searchButton, "LankyBox");
-		    actualNumber = rowCount.size();
-		  }*/
+			PageUtility.enterStringValue(searchButton, searchName);
+			Thread.sleep(2000);
+		    int count =PageUtility.getElementRowSize(rowCount);
+		    String actualNumber = Integer.toString(count);
+		    Assert.assertEquals(actualNumber, expectedNumber,"row count showing is not correct");
+		   }
 	    
 	    public void navigateToNextPageOnClickingNextOptionVerification() throws IOException, InterruptedException {
 	        String expectedNum = ExcelUtility.getNumeric(28, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
@@ -186,16 +183,18 @@ public class InventoryPage {
 	    	PageUtility.clickOnElement(nextButton);
 	    	Thread.sleep(1000);
 	    	for(WebElement menu:nextPageNum) {
-			String actualText=menu.getText();
+			String actualText=PageUtility.getElementText(menu);
 			if(actualText.contentEquals(pageNum)) {
 			Assert.assertEquals(actualText, expectedNum);
-				break;
-			  } 
-			}
+			break;
+		   } 
+		  }
 	    }
+	    
 	    public void UserIsAbleToEditInventoryProductVerification() throws IOException {
 	    	String attribute = ExcelUtility.getString(23, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	    	String attributeValue = ExcelUtility.getNumeric(24, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	    	String alertMsg = ExcelUtility.getString(25, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
 	        String actualMsg;
 	        boolean compareElement;
 	    	PageUtility.clickOnElement(inventoryProductMoreInfoOption);
@@ -204,15 +203,32 @@ public class InventoryPage {
 				actualMsg =row.getAttribute(attribute);
 				compareElement = actualMsg.contentEquals(attributeValue);
 				if(compareElement) {
-			    row.click();
+				PageUtility.clickOnElement(row);
 			    break;
 				}
 			PageUtility.clickOnElement(editOption);
 			PageUtility.clickOnElement(editProductButton);
 			String actualAlertMsg = editUpdateMsg.getText();
-			String expectedAlertMsg = "Product successfully updated";
+			String expectedAlertMsg = alertMsg;
 			Assert.assertEquals(actualAlertMsg, expectedAlertMsg,"Both messages are not same");	
-	    }
-	    	
-	    }
-}
+	       }	
+	     }
+	    
+	    public void exportToExcelFileWithoutSelectingProduct() throws IOException {
+	       String expectedMsg = ExcelUtility.getString(30, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	       PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+	       PageUtility.clickOnElement(actionsIcon);
+	       PageUtility.clickOnElement(exportToExcel);
+	       String actualMsg =  PageUtility.getElementText(excelAlert);
+	       Assert.assertEquals(actualMsg, expectedMsg,"Alert msg is not correct");
+	      }
+	    
+	    public void exportToPdfFileWithoutSelectingProduct() throws IOException {
+	       String expectedMsg = ExcelUtility.getString(30, 3, System.getProperty("user.dir")+Constants.Constants.EXCELFILE,"Sheet4");
+	       PageUtility.clickOnElement(inventoryProductMoreInfoOption);
+	       PageUtility.clickOnElement(actionsIcon);
+	       PageUtility.clickOnElement(exportToPdfFile);
+	       String actualMsg =  PageUtility.getElementText(excelAlert);
+	       Assert.assertEquals(actualMsg, expectedMsg,"Alert msg is not correct");
+	      } 
+        }

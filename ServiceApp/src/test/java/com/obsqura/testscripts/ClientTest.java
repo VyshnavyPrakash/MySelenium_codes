@@ -12,48 +12,27 @@ public class ClientTest extends Base {
 	ClientPage obj;
 	LoginAccountPage obj1;
 	@Test
-	public void verifyThatUserIsAbleToAddClient() throws IOException {
+	public void verifyThatUserIsAbleToAddClient() throws IOException, InterruptedException {
 		obj = new ClientPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
 		obj.addingClientDetails();
 	}
-	
-	/*public void verifyaddingClientDetailsUsingDataProvider() throws IOException {
-		obj = new ClientPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.addingClientDetails2();
-	}*/
-	
 	@Test
-	public void verifyThatUserIsAbleToDelectAClient() throws IOException {
+	public void verifyUserIsableToAddClientDetailsWithoutClientName() throws IOException {
 		obj = new ClientPage(driver);
 		obj1 = new LoginAccountPage(driver);
 		obj1.loginAccountVerification();
-		obj.delectingClientDetails();
+		obj.addingClientDetailsWithoutClientName();
 	}
 	@Test
-	 public void verifyingShowButtonGivesCorrectNumberOfRows() throws IOException {
+	 public void verifyingShowButtonGivesCorrectNumberOfRows() throws IOException, InterruptedException {
 		 obj = new ClientPage(driver);
 		 obj1 = new LoginAccountPage(driver);
 		 obj1.loginAccountVerification();
 		 obj.clientShowButtonVerification();
 	 }
-	@Test
-	public void verifyClientDetailsExportToExcelFile() throws IOException {
-		 obj = new ClientPage(driver);
-		 obj1 = new LoginAccountPage(driver);
-		 obj1.loginAccountVerification();
-		 obj.clientdetailsExportToExcelFile();
-	}
-	@Test
-	public void verifyClientDetailsExportToPdfFile() throws IOException {
-		 obj = new ClientPage(driver);
-		 obj1 = new LoginAccountPage(driver);
-		 obj1.loginAccountVerification();
-		 obj.clientDetailsExportToPdfFile();
-	}
+	
 	@Test
 	public void vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification() throws IOException {
 		 obj = new ClientPage(driver);

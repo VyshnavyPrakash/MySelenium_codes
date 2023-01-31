@@ -10,9 +10,9 @@
    <test thread-count="5" name="Test">
     <parameter name="browser" value="Chrome">
      <classes>
-      <class name="com.obsqura.testscripts.InventoryTest">
+      <class name="com.obsqura.testscripts.LoginAccountTest">
        <methods>
-        <include name="verifyUserIsAbleToNavigateToNextPageOnClickingNextOption"></include>
+        <include name="verifyUserIsAbleToLogin"></include>
        </methods>
       </class>
      </classes>

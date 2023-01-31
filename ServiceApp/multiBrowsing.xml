@@ -8,24 +8,22 @@
    <test thread-count="5" name="Test">
     <parameter name="browser" value="Chrome"/> 
        <classes>
-         <class name="com.obsqura.testscripts.LoginAccountTest">
-          <methods>
-            <include name="verifyUserIsAbleToLogin"></include>
-          </methods>
+         <class name="com.obsqura.testscripts.ReparationTest">
+          
         </class>
        </classes>
       </test> <!-- Test -->
   
 
-    <test thread-count="5" name="Test2">
+   <!--  <test thread-count="5" name="Test2">
      <parameter name="browser" value="Edge"/> 
       <classes>
-       <class name="com.obsqura.testscripts.LoginAccountTest">
+       <class name="com.obsqura.testscripts.ClientTest">
         <methods>
-         <include name="verifyUserIsAbleToLogin"></include>
+         <include name="rowNumberInShowButtonVerificationForPendingRepairs"></include>
         </methods>
        </class>   
       </classes>
-     </test> <!-- Test -->
+     </test>  Test --> 
      
    </suite> <!-- Suite -->
