@@ -9,64 +9,64 @@ import com.obsqura.pages.HomePage;
 import com.obsqura.pages.LoginAccountPage;
 
 public class HomeTest extends Base {
-	HomePage obj;
+	HomePage homepage;
 	LoginAccountPage loginpage;
 	
 	@Test
 	public void verifyQuickEmailFieldWithoutMsg() throws IOException {
-		obj = new HomePage(driver);
+		homepage = new HomePage(driver);
 		loginpage = new LoginAccountPage(driver);
 		loginpage.loginAccountVerification();
-		obj.quickemailFieldWithoutMsg();
+		homepage.quickemailFieldWithoutMsg();
 	}
 	@Test
     public void verifyQuickEmailFieldWithoutSubject() throws IOException {
-	   obj = new HomePage(driver);
+	   homepage = new HomePage(driver);
 	   loginpage = new LoginAccountPage(driver);
 	   loginpage.loginAccountVerification();
-	   obj.quickemailFieldWithoutSubject();
+	   homepage.quickemailFieldWithoutSubject();
     }
 	@Test
 	public void verifyQuickEmailFieldWithoutEmail() throws IOException {
-		 obj = new HomePage(driver);
+		 homepage = new HomePage(driver);
 		 loginpage = new LoginAccountPage(driver);
 		 loginpage.loginAccountVerification();
-		 obj.quickemailFieldWithoutEmail();
+		 homepage.quickemailFieldWithoutEmail();
 	}
 	@Test
 	public void verifyThatUserIsAbleToNavigateToQualityAlertPage() throws IOException {
-	   obj = new HomePage(driver);
+	   homepage = new HomePage(driver);
 	   loginpage = new LoginAccountPage(driver);
 	   loginpage.loginAccountVerification();
-	   obj.navigateToQualityAlertVerification();
+	   homepage.navigateToQualityAlertVerification();
 	}
 	@Test
 	public void verifyUserIsAbleTNavigateToInventoryPage() throws IOException {
-	   obj = new HomePage(driver);
+	   homepage = new HomePage(driver);
 	   loginpage = new LoginAccountPage(driver);
 	   loginpage.loginAccountVerification();
-	   obj.navigateToInventoryPageVerification();
+	   homepage.navigateToInventoryPageVerification();
 	}
 	@Test
 	public void verifyUserIsAbleTNavigateToClientPage() throws IOException {
-		   obj = new HomePage(driver);
-		   loginpage = new LoginAccountPage(driver);
-		   loginpage.loginAccountVerification();
-		   obj.clientPageVerification();
+		homepage = new HomePage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		homepage.clientPageVerification();
     }
 	@Test
 	public void verifyUserIsAbleTNavigateToReparationPage() throws IOException {
-		   obj = new HomePage(driver);
-		   loginpage = new LoginAccountPage(driver);
-		   loginpage.loginAccountVerification();
-		   obj.reparationPageVerification();
+		homepage = new HomePage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		homepage.reparationPageVerification();
 	}
 	@Test
 	public void verifyQuickSMSFieldWithoutMsg() throws IOException {
-		   obj = new HomePage(driver);
+		   homepage = new HomePage(driver);
 		   loginpage = new LoginAccountPage(driver);
 		   loginpage.loginAccountVerification();
-		   obj.quickSMSFieldWithoutMsg();
+		   homepage.quickSMSFieldWithoutMsg();
 	}
 	
 }

@@ -9,56 +9,56 @@ import com.obsqura.pages.LoginAccountPage;
 import com.obsqura.pages.ReparationPage;
 
 public class ReparationTest extends Base {
-	ReparationPage obj;
-	LoginAccountPage obj1;
+	ReparationPage reparationpage;
+	LoginAccountPage loginpage;
 	@Test(priority=1)
 	public void verifyCorrectNumberOfRowsAreShownOnSelectingShowButton() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.rowNumberInShowButtonVerification();	
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.rowNumberInShowButtonVerification();	
 	}
 	@Test(priority=2)
 	public void verifyThatauserIsAbleTodownloadReparationExcelSheet() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.downloadingReparationExcelSheet();
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.downloadingReparationExcelSheet();
 	}
 	@Test(priority=3)
 	public void verifycolumnVisibility() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.columnVisibilityVerification();
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.columnVisibilityVerification();
 	}
 	@Test(priority=4)
 	public void verifyRowCountWithSameName() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.rowCountWithSameNameVerification();
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.rowCountWithSameNameVerification();
 	}
 	@Test(priority=5)
 	public void verifyTotalCompletedRepairRows() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.totalCompletedRepairRows();
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.totalCompletedRepairRows();
 	}
 	@Test(priority=6)
 	public void verifycolumnNumber() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.columnNumberVerification();
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.columnNumberVerification();
 	}
 	@Test(priority=7)
 	public void rowNumberInShowButtonVerificationForPendingRepairs() throws IOException {
-		obj = new ReparationPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.rowNumberInShowButtonVerificationForPendingRepairs();
+		reparationpage = new ReparationPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		reparationpage.rowNumberInShowButtonVerificationForPendingRepairs();
 	}
 	
 	
