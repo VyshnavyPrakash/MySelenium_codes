@@ -1,0 +1,7 @@
+com\obsqura\utilities\ScreenShotUtilities.class
+com\obsqura\utilities\ExcelUtility.class
+Constants\Constants.class
+com\obsqura\utilities\FakerUtility.class
+com\obsqura\utilities\PageUtility.class
+com\obsqura\utilities\WaitUtility.class
+com\obsqura\utilities\ExtentReportUtility.class

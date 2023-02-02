@@ -9,50 +9,50 @@ import com.obsqura.pages.InventoryPage;
 import com.obsqura.pages.LoginAccountPage;
 
 public class InventoryTest extends Base{
-	InventoryPage obj;
-	LoginAccountPage obj1;
+	InventoryPage inventorytest;
+	LoginAccountPage loginpage;
 	@Test  
 	public void verifyAddInventoryProduct() throws IOException {
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.addInventoryProduct();
+		inventorytest = new InventoryPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		inventorytest.addInventoryProduct();
 	}
 	
 	@Test
-	public void verifyrowCountWithSameName() throws IOException, InterruptedException {
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.rowCountWithSameNameVerification();
+	public void verifyrowCountWithSameName() throws IOException {
+		inventorytest = new InventoryPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		inventorytest.rowCountWithSameNameVerification();
 	}
 	
 	@Test
-	public void verifyUserIsAbleToNavigateToNextPageOnClickingNextOption() throws IOException, InterruptedException {
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.navigateToNextPageOnClickingNextOptionVerification();
+	public void verifyUserIsAbleToNavigateToNextPageOnClickingNextOption() throws IOException {
+		inventorytest = new InventoryPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		inventorytest.navigateToNextPageOnClickingNextOptionVerification();
 	}
 	@Test
 	public void verifyuserIsAbleToEditInventoryProduct() throws IOException {
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.UserIsAbleToEditInventoryProductVerification();
+		inventorytest = new InventoryPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		inventorytest.UserIsAbleToEditInventoryProductVerification();
 	}
 	@Test
 	public void verifyExportFileWithoutSelectingProduct() throws IOException {
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.exportToExcelFileWithoutSelectingProduct();
+		inventorytest = new InventoryPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		inventorytest.exportToExcelFileWithoutSelectingProduct();
 	}
 	public void verifyExportToPdfFileWithoutSelectingProduct() throws IOException {
-		obj = new InventoryPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.exportToPdfFileWithoutSelectingProduct();
+		inventorytest = new InventoryPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		inventorytest.exportToPdfFileWithoutSelectingProduct();
 	}
 	
 

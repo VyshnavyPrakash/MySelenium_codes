@@ -9,35 +9,35 @@ import com.obsqura.pages.ClientPage;
 import com.obsqura.pages.LoginAccountPage;
 
 public class ClientTest extends Base {
-	ClientPage obj;
-	LoginAccountPage obj1;
-	@Test
-	public void verifyThatUserIsAbleToAddClient() throws IOException, InterruptedException {
-		obj = new ClientPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.addingClientDetails();
+	ClientPage clientpage;
+	LoginAccountPage loginpage;
+	@Test(priority = 1)
+	public void verifyThatUserIsAbleToAddClient() throws IOException {
+		clientpage = new ClientPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		clientpage.addingClientDetails();
 	}
-	@Test
+	@Test(priority = 2)
 	public void verifyUserIsableToAddClientDetailsWithoutClientName() throws IOException {
-		obj = new ClientPage(driver);
-		obj1 = new LoginAccountPage(driver);
-		obj1.loginAccountVerification();
-		obj.addingClientDetailsWithoutClientName();
+		clientpage = new ClientPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		clientpage.addingClientDetailsWithoutClientName();
 	}
-	@Test
-	 public void verifyingShowButtonGivesCorrectNumberOfRows() throws IOException, InterruptedException {
-		 obj = new ClientPage(driver);
-		 obj1 = new LoginAccountPage(driver);
-		 obj1.loginAccountVerification();
-		 obj.clientShowButtonVerification();
+	@Test(priority = 3)
+	 public void verifyingShowButtonGivesCorrectNumberOfRows() throws IOException {
+		clientpage = new ClientPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		clientpage.clientShowButtonVerification();
 	 }
 	
-	@Test
+	@Test(priority = 4)
 	public void vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification() throws IOException {
-		 obj = new ClientPage(driver);
-		 obj1 = new LoginAccountPage(driver);
-		 obj1.loginAccountVerification();
-		 obj.navigateToNextPageOnClickingNextOptionVerification();
+		clientpage = new ClientPage(driver);
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		clientpage.navigateToNextPageOnClickingNextOptionVerification();
 	}
 }

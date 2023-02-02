@@ -1,0 +1,12 @@
+com\obsqura\testscripts\LoginAccountTest.class
+com\obsqura\pages\HomePage.class
+com\obsqura\ServiceApp\Base.class
+com\obsqura\ServiceApp\Listeners.class
+com\obsqura\testscripts\ClientTest.class
+com\obsqura\pages\ClientPage.class
+com\obsqura\pages\ReparationPage.class
+com\obsqura\testscripts\InventoryTest.class
+com\obsqura\testscripts\HomeTest.class
+com\obsqura\pages\InventoryPage.class
+com\obsqura\pages\LoginAccountPage.class
+com\obsqura\testscripts\ReparationTest.class

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,26 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">30 methods, 2 failed,   28 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.obsqura.testscripts.ReparationTest" class="method navigator-link" hash-for-method="verifycolumnNumber">verifycolumnNumber</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.obsqura.testscripts.ReparationTest" class="method navigator-link" hash-for-method="verifycolumnVisibility">verifycolumnVisibility</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">30 methods,   30 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -243,6 +224,16 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.obsqura.testscripts.ReparationTest" class="method navigator-link" hash-for-method="verifycolumnNumber">verifycolumnNumber</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.obsqura.testscripts.ReparationTest" class="method navigator-link" hash-for-method="verifycolumnVisibility">verifycolumnVisibility</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.obsqura.testscripts.ClientTest" class="method navigator-link" hash-for-method="verifyingShowButtonGivesCorrectNumberOfRows">verifyingShowButtonGivesCorrectNumberOfRows</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -273,40 +264,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.obsqura.testscripts.ReparationTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifycolumnNumber">
-                  </a> <!-- verifycolumnNumber -->
-                  <span class="method-name">verifycolumnNumber</span>
-                  <div class="stack-trace">java.lang.AssertionError: both the column count are same expected [15] but found [14]
-	at com.obsqura.pages.ReparationPage.columnNumberVerification(ReparationPage.java:136)
-	at com.obsqura.testscripts.ReparationTest.verifycolumnNumber(ReparationTest.java:54)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifycolumnVisibility">
-                  </a> <!-- verifycolumnVisibility -->
-                  <span class="method-name">verifycolumnVisibility</span>
-                  <div class="stack-trace">java.lang.AssertionError: Column count is not as expected expected [15] but found [16]
-	at com.obsqura.pages.ReparationPage.columnVisibilityVerification(ReparationPage.java:98)
-	at com.obsqura.testscripts.ReparationTest.verifycolumnVisibility(ReparationTest.java:33)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -410,49 +367,56 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.obsqura.testscripts.LoginAccountTest</span>
+              <span class="class-name">com.obsqura.testscripts.ReparationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyBackToLogin">
-                  </a> <!-- verifyBackToLogin -->
-                  <span class="method-name">verifyBackToLogin</span>
+                  <a name="rowNumberInShowButtonVerificationForPendingRepairs">
+                  </a> <!-- rowNumberInShowButtonVerificationForPendingRepairs -->
+                  <span class="method-name">rowNumberInShowButtonVerificationForPendingRepairs</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyForgotPassword">
-                  </a> <!-- verifyForgotPassword -->
-                  <span class="method-name">verifyForgotPassword</span>
+                  <a name="verifyCorrectNumberOfRowsAreShownOnSelectingShowButton">
+                  </a> <!-- verifyCorrectNumberOfRowsAreShownOnSelectingShowButton -->
+                  <span class="method-name">verifyCorrectNumberOfRowsAreShownOnSelectingShowButton</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginWithWrongPassword">
-                  </a> <!-- verifyLoginWithWrongPassword -->
-                  <span class="method-name">verifyLoginWithWrongPassword</span>
+                  <a name="verifyRowCountWithSameName">
+                  </a> <!-- verifyRowCountWithSameName -->
+                  <span class="method-name">verifyRowCountWithSameName</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginWithWrongUsername">
-                  </a> <!-- verifyLoginWithWrongUsername -->
-                  <span class="method-name">verifyLoginWithWrongUsername</span>
+                  <a name="verifyThatauserIsAbleTodownloadReparationExcelSheet">
+                  </a> <!-- verifyThatauserIsAbleTodownloadReparationExcelSheet -->
+                  <span class="method-name">verifyThatauserIsAbleTodownloadReparationExcelSheet</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyUserIsAbleToLogOut">
-                  </a> <!-- verifyUserIsAbleToLogOut -->
-                  <span class="method-name">verifyUserIsAbleToLogOut</span>
+                  <a name="verifyTotalCompletedRepairRows">
+                  </a> <!-- verifyTotalCompletedRepairRows -->
+                  <span class="method-name">verifyTotalCompletedRepairRows</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyUserIsAbleToLogin">
-                  </a> <!-- verifyUserIsAbleToLogin -->
-                  <span class="method-name">verifyUserIsAbleToLogin</span>
+                  <a name="verifycolumnNumber">
+                  </a> <!-- verifycolumnNumber -->
+                  <span class="method-name">verifycolumnNumber</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifycolumnVisibility">
+                  </a> <!-- verifycolumnVisibility -->
+                  <span class="method-name">verifycolumnVisibility</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -503,42 +467,49 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.obsqura.testscripts.ReparationTest</span>
+              <span class="class-name">com.obsqura.testscripts.LoginAccountTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="rowNumberInShowButtonVerificationForPendingRepairs">
-                  </a> <!-- rowNumberInShowButtonVerificationForPendingRepairs -->
-                  <span class="method-name">rowNumberInShowButtonVerificationForPendingRepairs</span>
+                  <a name="verifyBackToLogin">
+                  </a> <!-- verifyBackToLogin -->
+                  <span class="method-name">verifyBackToLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyCorrectNumberOfRowsAreShownOnSelectingShowButton">
-                  </a> <!-- verifyCorrectNumberOfRowsAreShownOnSelectingShowButton -->
-                  <span class="method-name">verifyCorrectNumberOfRowsAreShownOnSelectingShowButton</span>
+                  <a name="verifyForgotPassword">
+                  </a> <!-- verifyForgotPassword -->
+                  <span class="method-name">verifyForgotPassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyRowCountWithSameName">
-                  </a> <!-- verifyRowCountWithSameName -->
-                  <span class="method-name">verifyRowCountWithSameName</span>
+                  <a name="verifyLoginWithWrongPassword">
+                  </a> <!-- verifyLoginWithWrongPassword -->
+                  <span class="method-name">verifyLoginWithWrongPassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyThatauserIsAbleTodownloadReparationExcelSheet">
-                  </a> <!-- verifyThatauserIsAbleTodownloadReparationExcelSheet -->
-                  <span class="method-name">verifyThatauserIsAbleTodownloadReparationExcelSheet</span>
+                  <a name="verifyLoginWithWrongUsername">
+                  </a> <!-- verifyLoginWithWrongUsername -->
+                  <span class="method-name">verifyLoginWithWrongUsername</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyTotalCompletedRepairRows">
-                  </a> <!-- verifyTotalCompletedRepairRows -->
-                  <span class="method-name">verifyTotalCompletedRepairRows</span>
+                  <a name="verifyUserIsAbleToLogOut">
+                  </a> <!-- verifyUserIsAbleToLogOut -->
+                  <span class="method-name">verifyUserIsAbleToLogOut</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUserIsAbleToLogin">
+                  </a> <!-- verifyUserIsAbleToLogin -->
+                  <span class="method-name">verifyUserIsAbleToLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -559,10 +530,10 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.obsqura.testscripts.LoginAccountTest&quot;/&gt;
+      &lt;class name=&quot;com.obsqura.testscripts.ReparationTest&quot;/&gt;
       &lt;class name=&quot;com.obsqura.testscripts.ClientTest&quot;/&gt;
       &lt;class name=&quot;com.obsqura.testscripts.InventoryTest&quot;/&gt;
-      &lt;class name=&quot;com.obsqura.testscripts.ReparationTest&quot;/&gt;
+      &lt;class name=&quot;com.obsqura.testscripts.LoginAccountTest&quot;/&gt;
       &lt;class name=&quot;com.obsqura.testscripts.HomeTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
@@ -587,6 +558,14 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">smokeTesting</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyUserIsAbleToLogin</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -605,125 +584,125 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(30);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyRowCountWithSameName')
+data.setCell(0, 1, 'verifycolumnVisibility')
 data.setCell(0, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(0, 3, 8974);
+data.setCell(0, 3, 16558);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyThatUserIsAbleToAddClient')
-data.setCell(1, 2, 'com.obsqura.testscripts.ClientTest')
-data.setCell(1, 3, 8734);
+data.setCell(1, 1, 'rowNumberInShowButtonVerificationForPendingRepairs')
+data.setCell(1, 2, 'com.obsqura.testscripts.ReparationTest')
+data.setCell(1, 3, 9325);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyTotalCompletedRepairRows')
+data.setCell(2, 1, 'verifyCorrectNumberOfRowsAreShownOnSelectingShowButton')
 data.setCell(2, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(2, 3, 8515);
+data.setCell(2, 3, 8973);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'verifycolumnNumber')
 data.setCell(3, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(3, 3, 8500);
+data.setCell(3, 3, 8662);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyingShowButtonGivesCorrectNumberOfRows')
+data.setCell(4, 1, 'verifyThatUserIsAbleToAddClient')
 data.setCell(4, 2, 'com.obsqura.testscripts.ClientTest')
-data.setCell(4, 3, 8356);
+data.setCell(4, 3, 8569);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyAddInventoryProduct')
-data.setCell(5, 2, 'com.obsqura.testscripts.InventoryTest')
-data.setCell(5, 3, 8290);
+data.setCell(5, 1, 'verifyTotalCompletedRepairRows')
+data.setCell(5, 2, 'com.obsqura.testscripts.ReparationTest')
+data.setCell(5, 3, 8150);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyUserIsAbleToNavigateToNextPageOnClickingNextOption')
+data.setCell(6, 1, 'verifyAddInventoryProduct')
 data.setCell(6, 2, 'com.obsqura.testscripts.InventoryTest')
-data.setCell(6, 3, 8252);
+data.setCell(6, 3, 7922);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verifyCorrectNumberOfRowsAreShownOnSelectingShowButton')
-data.setCell(7, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(7, 3, 7806);
+data.setCell(7, 1, 'verifyingShowButtonGivesCorrectNumberOfRows')
+data.setCell(7, 2, 'com.obsqura.testscripts.ClientTest')
+data.setCell(7, 3, 7698);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifycolumnVisibility')
+data.setCell(8, 1, 'verifyRowCountWithSameName')
 data.setCell(8, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(8, 3, 7691);
+data.setCell(8, 3, 7621);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'rowNumberInShowButtonVerificationForPendingRepairs')
-data.setCell(9, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(9, 3, 7461);
+data.setCell(9, 1, 'verifyUserIsAbleToNavigateToNextPageOnClickingNextOption')
+data.setCell(9, 2, 'com.obsqura.testscripts.InventoryTest')
+data.setCell(9, 3, 7084);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'verifyUserIsableToAddClientDetailsWithoutClientName')
-data.setCell(10, 2, 'com.obsqura.testscripts.ClientTest')
-data.setCell(10, 3, 7297);
+data.setCell(10, 1, 'verifyrowCountWithSameName')
+data.setCell(10, 2, 'com.obsqura.testscripts.InventoryTest')
+data.setCell(10, 3, 6480);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'verifyThatauserIsAbleTodownloadReparationExcelSheet')
 data.setCell(11, 2, 'com.obsqura.testscripts.ReparationTest')
-data.setCell(11, 3, 7070);
+data.setCell(11, 3, 6414);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'verifyUserIsAbleTNavigateToReparationPage')
-data.setCell(12, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(12, 3, 6847);
+data.setCell(12, 1, 'verifyUserIsableToAddClientDetailsWithoutClientName')
+data.setCell(12, 2, 'com.obsqura.testscripts.ClientTest')
+data.setCell(12, 3, 6250);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification')
-data.setCell(13, 2, 'com.obsqura.testscripts.ClientTest')
-data.setCell(13, 3, 6667);
+data.setCell(13, 1, 'verifyExportFileWithoutSelectingProduct')
+data.setCell(13, 2, 'com.obsqura.testscripts.InventoryTest')
+data.setCell(13, 3, 6158);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'verifyrowCountWithSameName')
-data.setCell(14, 2, 'com.obsqura.testscripts.InventoryTest')
-data.setCell(14, 3, 6510);
+data.setCell(14, 1, 'verifyUserIsAbleTNavigateToReparationPage')
+data.setCell(14, 2, 'com.obsqura.testscripts.HomeTest')
+data.setCell(14, 3, 5731);
 data.setCell(15, 0, 15)
 data.setCell(15, 1, 'verifyUserIsAbleTNavigateToClientPage')
 data.setCell(15, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(15, 3, 6122);
+data.setCell(15, 3, 5603);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'verifyExportFileWithoutSelectingProduct')
-data.setCell(16, 2, 'com.obsqura.testscripts.InventoryTest')
-data.setCell(16, 3, 5560);
+data.setCell(16, 1, 'vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification')
+data.setCell(16, 2, 'com.obsqura.testscripts.ClientTest')
+data.setCell(16, 3, 5539);
 data.setCell(17, 0, 17)
 data.setCell(17, 1, 'verifyThatUserIsAbleToNavigateToQualityAlertPage')
 data.setCell(17, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(17, 3, 5017);
+data.setCell(17, 3, 4911);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'verifyuserIsAbleToEditInventoryProduct')
-data.setCell(18, 2, 'com.obsqura.testscripts.InventoryTest')
-data.setCell(18, 3, 3948);
+data.setCell(18, 1, 'verifyUserIsAbleToLogOut')
+data.setCell(18, 2, 'com.obsqura.testscripts.LoginAccountTest')
+data.setCell(18, 3, 3835);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'verifyUserIsAbleToLogOut')
-data.setCell(19, 2, 'com.obsqura.testscripts.LoginAccountTest')
-data.setCell(19, 3, 3818);
+data.setCell(19, 1, 'verifyUserIsAbleTNavigateToInventoryPage')
+data.setCell(19, 2, 'com.obsqura.testscripts.HomeTest')
+data.setCell(19, 3, 3658);
 data.setCell(20, 0, 20)
-data.setCell(20, 1, 'verifyUserIsAbleTNavigateToInventoryPage')
-data.setCell(20, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(20, 3, 3775);
+data.setCell(20, 1, 'verifyuserIsAbleToEditInventoryProduct')
+data.setCell(20, 2, 'com.obsqura.testscripts.InventoryTest')
+data.setCell(20, 3, 3647);
 data.setCell(21, 0, 21)
-data.setCell(21, 1, 'verifyUserIsAbleToLogin')
-data.setCell(21, 2, 'com.obsqura.testscripts.LoginAccountTest')
-data.setCell(21, 3, 3439);
+data.setCell(21, 1, 'verifyQuickEmailFieldWithoutSubject')
+data.setCell(21, 2, 'com.obsqura.testscripts.HomeTest')
+data.setCell(21, 3, 2927);
 data.setCell(22, 0, 22)
-data.setCell(22, 1, 'verifyQuickEmailFieldWithoutSubject')
+data.setCell(22, 1, 'verifyQuickEmailFieldWithoutEmail')
 data.setCell(22, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(22, 3, 3252);
+data.setCell(22, 3, 2920);
 data.setCell(23, 0, 23)
-data.setCell(23, 1, 'verifyQuickEmailFieldWithoutEmail')
+data.setCell(23, 1, 'verifyQuickSMSFieldWithoutMsg')
 data.setCell(23, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(23, 3, 3031);
+data.setCell(23, 3, 2878);
 data.setCell(24, 0, 24)
 data.setCell(24, 1, 'verifyQuickEmailFieldWithoutMsg')
 data.setCell(24, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(24, 3, 2994);
+data.setCell(24, 3, 2829);
 data.setCell(25, 0, 25)
-data.setCell(25, 1, 'verifyQuickSMSFieldWithoutMsg')
-data.setCell(25, 2, 'com.obsqura.testscripts.HomeTest')
-data.setCell(25, 3, 2834);
+data.setCell(25, 1, 'verifyUserIsAbleToLogin')
+data.setCell(25, 2, 'com.obsqura.testscripts.LoginAccountTest')
+data.setCell(25, 3, 2476);
 data.setCell(26, 0, 26)
-data.setCell(26, 1, 'verifyForgotPassword')
+data.setCell(26, 1, 'verifyLoginWithWrongPassword')
 data.setCell(26, 2, 'com.obsqura.testscripts.LoginAccountTest')
-data.setCell(26, 3, 1521);
+data.setCell(26, 3, 1246);
 data.setCell(27, 0, 27)
-data.setCell(27, 1, 'verifyLoginWithWrongPassword')
+data.setCell(27, 1, 'verifyForgotPassword')
 data.setCell(27, 2, 'com.obsqura.testscripts.LoginAccountTest')
-data.setCell(27, 3, 1417);
+data.setCell(27, 3, 1241);
 data.setCell(28, 0, 28)
 data.setCell(28, 1, 'verifyLoginWithWrongUsername')
 data.setCell(28, 2, 'com.obsqura.testscripts.LoginAccountTest')
-data.setCell(28, 3, 1357);
+data.setCell(28, 3, 1214);
 data.setCell(29, 0, 29)
 data.setCell(29, 1, 'verifyBackToLogin')
 data.setCell(29, 2, 'com.obsqura.testscripts.LoginAccountTest')
-data.setCell(29, 3, 990);
+data.setCell(29, 3, 913);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -754,382 +733,378 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.obsqura.testscripts.LoginAccountTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.obsqura.testscripts.ReparationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyUserIsAbleToLogin</span>
-                <span class="method-start">5893 ms</span>
+                <span class="method-name">verifyCorrectNumberOfRowsAreShownOnSelectingShowButton</span>
+                <span class="method-start">5575 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleToLogin status=SUCCESS method=LoginAccountTest.verifyUserIsAbleToLo...)</span>
-                <span class="method-start">9340 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyCorrectNumberOfRowsAreShownOnSelectingShowButton status=SUCCESS method=Repara...)</span>
+                <span class="method-start">14562 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">9544 ms</span>
+                <span class="method-start">15388 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyLoginWithWrongPassword</span>
-                <span class="method-start">14330 ms</span>
+                <span class="method-name">verifyThatauserIsAbleTodownloadReparationExcelSheet</span>
+                <span class="method-start">20022 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyLoginWithWrongPassword status=SUCCESS method=LoginAccountTest.verifyLoginWith...)</span>
-                <span class="method-start">15748 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyThatauserIsAbleTodownloadReparationExcelSheet status=SUCCESS method=Reparatio...)</span>
+                <span class="method-start">26437 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">15978 ms</span>
+                <span class="method-start">27112 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyLoginWithWrongUsername</span>
-                <span class="method-start">20400 ms</span>
+                <span class="method-name">verifycolumnVisibility</span>
+                <span class="method-start">31981 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyLoginWithWrongUsername status=SUCCESS method=LoginAccountTest.verifyLoginWith...)</span>
-                <span class="method-start">21758 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifycolumnVisibility status=SUCCESS method=ReparationTest.verifycolumnVisibility(...)</span>
+                <span class="method-start">48540 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">21977 ms</span>
+                <span class="method-start">49264 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyForgotPassword</span>
-                <span class="method-start">26694 ms</span>
+                <span class="method-name">verifyRowCountWithSameName</span>
+                <span class="method-start">53704 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyForgotPassword status=SUCCESS method=LoginAccountTest.verifyForgotPassword()[...)</span>
-                <span class="method-start">28216 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyRowCountWithSameName status=SUCCESS method=ReparationTest.verifyRowCountWithS...)</span>
+                <span class="method-start">61325 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">28412 ms</span>
+                <span class="method-start">62057 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyBackToLogin</span>
-                <span class="method-start">33111 ms</span>
+                <span class="method-name">verifyTotalCompletedRepairRows</span>
+                <span class="method-start">66567 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyBackToLogin status=SUCCESS method=LoginAccountTest.verifyBackToLogin()[pri:5,...)</span>
-                <span class="method-start">34102 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyTotalCompletedRepairRows status=SUCCESS method=ReparationTest.verifyTotalComp...)</span>
+                <span class="method-start">74718 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">34289 ms</span>
+                <span class="method-start">75334 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyUserIsAbleToLogOut</span>
-                <span class="method-start">39043 ms</span>
+                <span class="method-name">verifycolumnNumber</span>
+                <span class="method-start">79818 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleToLogOut status=SUCCESS method=LoginAccountTest.verifyUserIsAbleToL...)</span>
-                <span class="method-start">42862 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifycolumnNumber status=SUCCESS method=ReparationTest.verifycolumnNumber()[pri:6,...)</span>
+                <span class="method-start">88481 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">InitializeBrowser(Chrome)</span>
+                <span class="method-start">89213 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">rowNumberInShowButtonVerificationForPendingRepairs</span>
+                <span class="method-start">93648 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">browserQuit([TestResult name=rowNumberInShowButtonVerificationForPendingRepairs status=SUCCESS method=Reparation...)</span>
+                <span class="method-start">102974 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.obsqura.testscripts.ClientTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">43109 ms</span>
+                <span class="method-start">103666 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyThatUserIsAbleToAddClient</span>
-                <span class="method-start">47780 ms</span>
+                <span class="method-start">108136 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyThatUserIsAbleToAddClient status=SUCCESS method=ClientTest.verifyThatUserIsAb...)</span>
-                <span class="method-start">56515 ms</span>
+                <span class="method-start">116706 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">56764 ms</span>
+                <span class="method-start">117322 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUserIsableToAddClientDetailsWithoutClientName</span>
-                <span class="method-start">61546 ms</span>
+                <span class="method-start">122170 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyUserIsableToAddClientDetailsWithoutClientName status=SUCCESS method=ClientTes...)</span>
-                <span class="method-start">68844 ms</span>
+                <span class="method-start">128421 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">69082 ms</span>
+                <span class="method-start">129075 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyingShowButtonGivesCorrectNumberOfRows</span>
-                <span class="method-start">73874 ms</span>
+                <span class="method-start">133483 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyingShowButtonGivesCorrectNumberOfRows status=SUCCESS method=ClientTest.verify...)</span>
-                <span class="method-start">82231 ms</span>
+                <span class="method-start">141182 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">82423 ms</span>
+                <span class="method-start">141804 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification</span>
-                <span class="method-start">86915 ms</span>
+                <span class="method-start">146193 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification status=SUCCESS ...)</span>
-                <span class="method-start">93583 ms</span>
+                <span class="method-start">151733 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.obsqura.testscripts.InventoryTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">93780 ms</span>
+                <span class="method-start">152357 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyAddInventoryProduct</span>
-                <span class="method-start">98358 ms</span>
+                <span class="method-start">157006 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyAddInventoryProduct status=SUCCESS method=InventoryTest.verifyAddInventoryPro...)</span>
-                <span class="method-start">106649 ms</span>
+                <span class="method-start">164929 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">106928 ms</span>
+                <span class="method-start">165546 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyExportFileWithoutSelectingProduct</span>
-                <span class="method-start">111377 ms</span>
+                <span class="method-start">169809 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyExportFileWithoutSelectingProduct status=SUCCESS method=InventoryTest.verifyE...)</span>
-                <span class="method-start">116938 ms</span>
+                <span class="method-start">175968 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">117190 ms</span>
+                <span class="method-start">176581 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUserIsAbleToNavigateToNextPageOnClickingNextOption</span>
-                <span class="method-start">121871 ms</span>
+                <span class="method-start">180923 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleToNavigateToNextPageOnClickingNextOption status=SUCCESS method=Inve...)</span>
-                <span class="method-start">130123 ms</span>
+                <span class="method-start">188008 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">130371 ms</span>
+                <span class="method-start">188632 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyrowCountWithSameName</span>
-                <span class="method-start">134823 ms</span>
+                <span class="method-start">193087 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyrowCountWithSameName status=SUCCESS method=InventoryTest.verifyrowCountWithSa...)</span>
-                <span class="method-start">141334 ms</span>
+                <span class="method-start">199568 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">141578 ms</span>
+                <span class="method-start">200197 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyuserIsAbleToEditInventoryProduct</span>
-                <span class="method-start">146515 ms</span>
+                <span class="method-start">204890 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyuserIsAbleToEditInventoryProduct status=SUCCESS method=InventoryTest.verifyus...)</span>
-                <span class="method-start">150465 ms</span>
+                <span class="method-start">208538 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.obsqura.testscripts.ReparationTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.obsqura.testscripts.LoginAccountTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">150696 ms</span>
+                <span class="method-start">209123 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">rowNumberInShowButtonVerificationForPendingRepairs</span>
-                <span class="method-start">157357 ms</span>
+                <span class="method-name">verifyUserIsAbleToLogin</span>
+                <span class="method-start">214136 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=rowNumberInShowButtonVerificationForPendingRepairs status=SUCCESS method=Reparation...)</span>
-                <span class="method-start">164820 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleToLogin status=SUCCESS method=LoginAccountTest.verifyUserIsAbleToLo...)</span>
+                <span class="method-start">216613 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">165060 ms</span>
+                <span class="method-start">217274 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyCorrectNumberOfRowsAreShownOnSelectingShowButton</span>
-                <span class="method-start">172567 ms</span>
+                <span class="method-name">verifyLoginWithWrongPassword</span>
+                <span class="method-start">221813 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyCorrectNumberOfRowsAreShownOnSelectingShowButton status=SUCCESS method=Repara...)</span>
-                <span class="method-start">180374 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyLoginWithWrongPassword status=SUCCESS method=LoginAccountTest.verifyLoginWith...)</span>
+                <span class="method-start">223060 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">180638 ms</span>
+                <span class="method-start">223620 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyRowCountWithSameName</span>
-                <span class="method-start">185543 ms</span>
+                <span class="method-name">verifyLoginWithWrongUsername</span>
+                <span class="method-start">229936 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyRowCountWithSameName status=SUCCESS method=ReparationTest.verifyRowCountWithS...)</span>
-                <span class="method-start">194517 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyLoginWithWrongUsername status=SUCCESS method=LoginAccountTest.verifyLoginWith...)</span>
+                <span class="method-start">231150 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">194767 ms</span>
+                <span class="method-start">232247 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyThatauserIsAbleTodownloadReparationExcelSheet</span>
-                <span class="method-start">199420 ms</span>
+                <span class="method-name">verifyForgotPassword</span>
+                <span class="method-start">236580 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyThatauserIsAbleTodownloadReparationExcelSheet status=SUCCESS method=Reparatio...)</span>
-                <span class="method-start">206491 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyForgotPassword status=SUCCESS method=LoginAccountTest.verifyForgotPassword()[...)</span>
+                <span class="method-start">237822 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">206777 ms</span>
+                <span class="method-start">238721 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyTotalCompletedRepairRows</span>
-                <span class="method-start">211400 ms</span>
+                <span class="method-name">verifyBackToLogin</span>
+                <span class="method-start">243225 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifyTotalCompletedRepairRows status=SUCCESS method=ReparationTest.verifyTotalComp...)</span>
-                <span class="method-start">219915 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyBackToLogin status=SUCCESS method=LoginAccountTest.verifyBackToLogin()[pri:5,...)</span>
+                <span class="method-start">244139 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">220154 ms</span>
+                <span class="method-start">244685 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifycolumnNumber</span>
-                <span class="method-start">224598 ms</span>
+                <span class="method-name">verifyUserIsAbleToLogOut</span>
+                <span class="method-start">249176 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifycolumnNumber status=FAILURE method=ReparationTest.verifycolumnNumber()[pri:0,...)</span>
-                <span class="method-start">233104 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">233476 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifycolumnVisibility</span>
-                <span class="method-start">238148 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">browserQuit([TestResult name=verifycolumnVisibility status=FAILURE method=ReparationTest.verifycolumnVisibility(...)</span>
-                <span class="method-start">245843 ms</span>
+                <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleToLogOut status=SUCCESS method=LoginAccountTest.verifyUserIsAbleToL...)</span>
+                <span class="method-start">253012 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.obsqura.testscripts.HomeTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">246243 ms</span>
+                <span class="method-start">253627 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyQuickEmailFieldWithoutEmail</span>
-                <span class="method-start">250882 ms</span>
+                <span class="method-start">258097 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyQuickEmailFieldWithoutEmail status=SUCCESS method=HomeTest.verifyQuickEmailFi...)</span>
-                <span class="method-start">253914 ms</span>
+                <span class="method-start">261018 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">254158 ms</span>
+                <span class="method-start">261618 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyQuickEmailFieldWithoutMsg</span>
-                <span class="method-start">258906 ms</span>
+                <span class="method-start">265916 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyQuickEmailFieldWithoutMsg status=SUCCESS method=HomeTest.verifyQuickEmailFiel...)</span>
-                <span class="method-start">261901 ms</span>
+                <span class="method-start">268746 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">262104 ms</span>
+                <span class="method-start">269372 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyQuickEmailFieldWithoutSubject</span>
-                <span class="method-start">266865 ms</span>
+                <span class="method-start">273820 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyQuickEmailFieldWithoutSubject status=SUCCESS method=HomeTest.verifyQuickEmail...)</span>
-                <span class="method-start">270118 ms</span>
+                <span class="method-start">276748 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">270326 ms</span>
+                <span class="method-start">277364 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyQuickSMSFieldWithoutMsg</span>
-                <span class="method-start">275194 ms</span>
+                <span class="method-start">281854 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyQuickSMSFieldWithoutMsg status=SUCCESS method=HomeTest.verifyQuickSMSFieldWit...)</span>
-                <span class="method-start">278028 ms</span>
+                <span class="method-start">284732 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">278264 ms</span>
+                <span class="method-start">285408 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyThatUserIsAbleToNavigateToQualityAlertPage</span>
-                <span class="method-start">282871 ms</span>
+                <span class="method-start">289595 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyThatUserIsAbleToNavigateToQualityAlertPage status=SUCCESS method=HomeTest.ver...)</span>
-                <span class="method-start">287888 ms</span>
+                <span class="method-start">294506 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">288115 ms</span>
+                <span class="method-start">295169 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUserIsAbleTNavigateToClientPage</span>
-                <span class="method-start">292924 ms</span>
+                <span class="method-start">299658 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleTNavigateToClientPage status=SUCCESS method=HomeTest.verifyUserIsAb...)</span>
-                <span class="method-start">299046 ms</span>
+                <span class="method-start">305261 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">299281 ms</span>
+                <span class="method-start">305895 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUserIsAbleTNavigateToInventoryPage</span>
-                <span class="method-start">304005 ms</span>
+                <span class="method-start">310368 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleTNavigateToInventoryPage status=SUCCESS method=HomeTest.verifyUserI...)</span>
-                <span class="method-start">307780 ms</span>
+                <span class="method-start">314028 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">InitializeBrowser(Chrome)</span>
-                <span class="method-start">308021 ms</span>
+                <span class="method-start">314589 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUserIsAbleTNavigateToReparationPage</span>
-                <span class="method-start">312779 ms</span>
+                <span class="method-start">319077 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit([TestResult name=verifyUserIsAbleTNavigateToReparationPage status=SUCCESS method=HomeTest.verifyUser...)</span>
-                <span class="method-start">319627 ms</span>
+                <span class="method-start">324809 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

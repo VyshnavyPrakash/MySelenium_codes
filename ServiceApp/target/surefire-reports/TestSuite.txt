@@ -1,0 +1,274 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 90, Failures: 60, Errors: 0, Skipped: 30, Time elapsed: 1.779 s <<< FAILURE! - in TestSuite
+InitializeBrowser(com.obsqura.testscripts.ClientTest)  Time elapsed: 1.055 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.017 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.021 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ClientTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.008 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.006 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.HomeTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.006 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.InventoryTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.006 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.LoginAccountTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.003 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+InitializeBrowser(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'browser' is required by BeforeMethod on method InitializeBrowser but has not been marked @Optional or defined
+
+
+browserQuit(com.obsqura.testscripts.ReparationTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+

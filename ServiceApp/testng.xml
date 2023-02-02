@@ -6,13 +6,14 @@
 </listeners>
 
   <test thread-count="5" name="Test">
-  <parameter name="browser" value="Chrome"/> 
+  <parameter name="browser" value="chrome"/> 
 
  <classes>
- <class name="com.obsqura.testscripts.LoginAccountTest"></class>
+ 
+  <class name="com.obsqura.testscripts.ReparationTest"></class>
  <class name="com.obsqura.testscripts.ClientTest"></class>
  <class name="com.obsqura.testscripts.InventoryTest"></class>
- <class name="com.obsqura.testscripts.ReparationTest"></class>
+<class name="com.obsqura.testscripts.LoginAccountTest"></class>
  <class name="com.obsqura.testscripts.HomeTest"></class>
  
  

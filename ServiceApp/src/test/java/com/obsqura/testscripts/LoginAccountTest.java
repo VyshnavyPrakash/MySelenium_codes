@@ -8,39 +8,39 @@ import com.obsqura.ServiceApp.Base;
 import com.obsqura.pages.LoginAccountPage;
 
 public class LoginAccountTest extends Base {
-	LoginAccountPage obj;
+	LoginAccountPage loginpage;
 	
-	@Test(priority=1)
+	@Test(groups= {"smokeTesting"})
 	public void verifyUserIsAbleToLogin() throws IOException {
-		obj = new LoginAccountPage(driver);
-		obj.loginAccountVerification();
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
 	}
 	@Test(priority=2)
 	public void verifyLoginWithWrongPassword() throws IOException {
-		obj = new LoginAccountPage(driver);
-		obj.loginWithWrongPassword();
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginWithWrongPassword();
 	}
 	@Test(priority=3)
 	public void verifyLoginWithWrongUsername() throws IOException {
-		obj = new LoginAccountPage(driver);
-		obj.loginWithWrongUserName();
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginWithWrongUserName();
 	}
 	
 	@Test(priority=4)
 	public void verifyForgotPassword() throws IOException {
-		obj = new LoginAccountPage(driver);
-		obj.forgotPasswordVerification();
+		loginpage = new LoginAccountPage(driver);
+		loginpage.forgotPasswordVerification();
 	}
 	@Test(priority=5)
 	public void verifyBackToLogin() throws IOException {
-		obj = new LoginAccountPage(driver);
-		obj.backToLoginVerification();
+		loginpage = new LoginAccountPage(driver);
+		loginpage.backToLoginVerification();
 	}
 	@Test(priority=6)
 	public void verifyUserIsAbleToLogOut() throws IOException {
-		obj = new LoginAccountPage(driver);
-		obj.loginAccountVerification();
-		obj.logoutVerification();
+		loginpage = new LoginAccountPage(driver);
+		loginpage.loginAccountVerification();
+		loginpage.logoutVerification();
 	}
 
 }

@@ -26,6 +26,7 @@ import org.openqa.selenium.JavascriptExecutor;
 	return element.size();
 	}
 	
+	
 	public static int getElementColumnSize(List<WebElement> element) {
 	return element.size();
 	}

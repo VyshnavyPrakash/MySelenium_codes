@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test thread-count="1" verbose="0" name="Surefire test(failed)">
+    <classes>
+      <class name="com.obsqura.testscripts.HomeTest">
+        <methods>
+          <include name="InitializeBrowser"/>
+          <include name="verifyThatUserIsAbleToNavigateToQualityAlertPage"/>
+          <include name="verifyQuickSMSFieldWithoutMsg"/>
+          <include name="verifyQuickEmailFieldWithoutSubject"/>
+          <include name="verifyUserIsAbleTNavigateToReparationPage"/>
+          <include name="verifyUserIsAbleTNavigateToClientPage"/>
+          <include name="browserQuit"/>
+          <include name="verifyQuickEmailFieldWithoutMsg"/>
+          <include name="verifyUserIsAbleTNavigateToInventoryPage"/>
+          <include name="verifyQuickEmailFieldWithoutEmail"/>
+        </methods>
+      </class> <!-- com.obsqura.testscripts.HomeTest -->
+      <class name="com.obsqura.testscripts.InventoryTest">
+        <methods>
+          <include name="InitializeBrowser"/>
+          <include name="verifyExportFileWithoutSelectingProduct"/>
+          <include name="verifyuserIsAbleToEditInventoryProduct"/>
+          <include name="verifyAddInventoryProduct"/>
+          <include name="verifyUserIsAbleToNavigateToNextPageOnClickingNextOption"/>
+          <include name="browserQuit"/>
+          <include name="verifyrowCountWithSameName"/>
+        </methods>
+      </class> <!-- com.obsqura.testscripts.InventoryTest -->
+      <class name="com.obsqura.testscripts.ClientTest">
+        <methods>
+          <include name="InitializeBrowser"/>
+          <include name="verifyUserIsableToAddClientDetailsWithoutClientName"/>
+          <include name="verifyThatUserIsAbleToAddClient"/>
+          <include name="browserQuit"/>
+          <include name="vrifyUserIsAbleToNavigateToNextPageOnClickingNextOptionVerification"/>
+          <include name="verifyingShowButtonGivesCorrectNumberOfRows"/>
+        </methods>
+      </class> <!-- com.obsqura.testscripts.ClientTest -->
+      <class name="com.obsqura.testscripts.LoginAccountTest">
+        <methods>
+          <include name="InitializeBrowser"/>
+          <include name="verifyUserIsAbleToLogin"/>
+          <include name="verifyLoginWithWrongUsername"/>
+          <include name="verifyForgotPassword"/>
+          <include name="browserQuit"/>
+          <include name="verifyUserIsAbleToLogOut"/>
+          <include name="verifyBackToLogin"/>
+          <include name="verifyLoginWithWrongPassword"/>
+        </methods>
+      </class> <!-- com.obsqura.testscripts.LoginAccountTest -->
+      <class name="com.obsqura.testscripts.ReparationTest">
+        <methods>
+          <include name="InitializeBrowser"/>
+          <include name="verifyCorrectNumberOfRowsAreShownOnSelectingShowButton"/>
+          <include name="verifyThatauserIsAbleTodownloadReparationExcelSheet"/>
+          <include name="rowNumberInShowButtonVerificationForPendingRepairs"/>
+          <include name="verifyRowCountWithSameName"/>
+          <include name="verifyTotalCompletedRepairRows"/>
+          <include name="verifycolumnVisibility"/>
+          <include name="verifycolumnNumber"/>
+          <include name="browserQuit"/>
+        </methods>
+      </class> <!-- com.obsqura.testscripts.ReparationTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
